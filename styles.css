@@ -1,0 +1,131 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: white;
+    text-align: center;
+    background-color: #222; /* Fondo oscuro */
+}
+
+.circle-background {
+    position: absolute;
+    top: 10%; /* Ajustar posición del círculo */
+    left: 50%;
+    width: 150px; /* Tamaño del círculo */
+    height: 150px; /* Tamaño del círculo */
+    background-image: url('./images/camerino.jpeg'); /* Mismo fondo */
+    background-size: cover; /* Mantener el cover para que se vea bien */
+    background-position: center;
+    border-radius: 50%; /* Forma circular */
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.background-video {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%; /* Asegurarse de que cubra todo el ancho */
+    min-height: 100%; /* Asegurarse de que cubra toda la altura */
+    width: auto;
+    height: auto;
+    z-index: -1;
+    transform: translate(-50%, -50%);
+    filter: blur(5px); /* Difuminar el video */
+}
+
+.header {
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    top: 20%; /* Ajustar para dejar más espacio */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    text-align: center;
+}
+
+h1 {
+    font-size: 1.5rem;
+    margin-bottom: 40px; /* Aumentar margen inferior */
+}
+
+.main-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+    flex-direction: column;
+}
+
+.divider {
+    width: 80%;
+    height: 2px;
+    margin: 40px 0; /* Aumentar espacio alrededor del divisor */
+}
+
+.social-container {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 30px;
+    border-radius: 15px; /* Redondeado para el contenedor social */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    width: 80%; /* Ancho alargado del contenedor */
+    max-width: 600px; /* Ancho máximo */
+    margin-top: 40px; /* Aumentar espacio entre el divisor y el contenedor social */
+}
+
+.social-icons {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra los enlaces socialmente */
+    gap: 20px; /* Aumentar espacio entre los enlaces */
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    padding: 15px 25px; /* Mayor padding para un diseño más alargado */
+    border-radius: 25px; /* Bordes redondeados para cada enlace */
+    background: rgba(255, 255, 255, 0.1); /* Fondo más claro */
+    transition: background 0.3s;
+    width: 100%; /* Asegura que el enlace ocupe todo el ancho */
+}
+
+.social-link:hover {
+    background: rgba(255, 255, 255, 0.2); /* Efecto hover */
+}
+
+.icon {
+    width: 60px;
+    margin-right: 15px;
+    transition: transform 0.3s;
+}
+
+.icon:hover {
+    transform: scale(1.1);
+}
+
+@media (max-width: 600px) {
+    h1 {
+        font-size: 1.2rem;
+    }
+    .icon {
+        width: 40px; /* Tamaño más pequeño en móviles */
+    }
+}
+
+.footer {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 15px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.5);
+}
