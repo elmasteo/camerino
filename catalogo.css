@@ -1,0 +1,96 @@
+body {
+  background-color: #111;
+  color: white;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+.icon {
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.catalog-container {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.catalog-title {
+  font-size: 2rem;
+  margin-bottom: 30px;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  padding: 0 10px;
+}
+
+.product-card {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+}
+
+.product-image {
+  width: 100%;
+  border-radius: 15px;
+  margin-bottom: 15px;
+}
+
+.product-name {
+  font-size: 1.2rem;
+  margin: 10px 0 5px;
+}
+
+.product-price {
+  font-size: 1rem;
+  color: #00ff88;
+  margin-bottom: 15px;
+}
+
+.buy-button {
+  display: inline-block;
+  background-color: #25d366;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.buy-button:hover {
+  background-color: #1ebc5c;
+}
+
+@media (max-width: 600px) {
+  .catalog-title {
+    font-size: 1.5rem;
+  }
+}
+
+/* Fondo con el logo de la empresa */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('./images/camerino.jpeg'); /* Ruta de tu logo */
+  background-size: cover;
+  background-position: center;
+  filter: blur(8px) brightness(0.3); /* Difuminado y oscurecido */
+  opacity: 0.7;
+  z-index: -1;
+}
