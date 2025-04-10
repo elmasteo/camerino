@@ -120,7 +120,7 @@ h1 {
     }
 }
 
-.footer {
+.footer, section {
     background: rgba(0, 0, 0, 0.7);
     padding: 15px;
     position: relative;
