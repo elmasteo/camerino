@@ -23,7 +23,7 @@ export async function handler(event, context) {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      "Authorization": "x-api-key nJ9FF127-QcCmd0tcpB5Y-HDzmYu_BhJliqyz3D4T6E"
+      "Authorization": "x-api-key VqsSOqWAFpzpOkqo546IxtmCYMr2uduqNJoqtY5TNAc"
     },
     body: JSON.stringify(payload)
   });
