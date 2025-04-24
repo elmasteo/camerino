@@ -1,8 +1,13 @@
-function obtenerDatos(monto, descripcion) {
-    var raw = JSON.stringify({
+function obtenerDatos(monto, descripcion, imagenUrl) {
+    const mensaje = `Hola! Realicé el pago exitoso del producto "${descripcion}" por ${monto.toLocaleString('es-CO')} COP.`;
+    const callback_url = `https://wa.me/+573177657335?text=${encodeURIComponent(mensaje)}`;
+
+    const raw = JSON.stringify({
         monto: monto,
         descripcion: descripcion,
-        tipo: "CLOSE"
+        tipo: "CLOSE",
+        image_url: imagenUrl,
+        callback_url: callback_url
     });
 
     fetch("/.netlify/functions/crearLinkPago", {
@@ -23,10 +28,16 @@ function obtenerDatos(monto, descripcion) {
     .catch(error => console.log('error', error));
 }
 
-function obtenerCotizacion(descripcion) {
-    var raw = JSON.stringify({
+
+function obtenerCotizacion(descripcion, imagenUrl) {
+    const mensaje = `Hola! Realicé el pago exitoso del abono: ${descripcion}`;
+    const callback_url = `https://wa.me/+573177657335?text=${encodeURIComponent(mensaje)}`;
+
+    const raw = JSON.stringify({
         descripcion: descripcion,
-        tipo: "OPEN"
+        tipo: "OPEN",
+        image_url: imagenUrl,
+        callback_url: callback_url
     });
 
     fetch("/.netlify/functions/crearLinkPago", {
@@ -46,3 +57,4 @@ function obtenerCotizacion(descripcion) {
     })
     .catch(error => console.log('error', error));
 }
+
