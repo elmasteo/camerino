@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
-Sitemap: https://camerinojip.netlify.app/sitemap.xml
+Sitemap: https://camerinojip.com/sitemap.xml
 
