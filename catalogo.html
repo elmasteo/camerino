@@ -1,44 +1,44 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Explora el arte del tufting con Camerino JIP. Diseñamos tapetes personalizados únicos y llenos de estilo. ¡Revisa nuestro catálogo o contáctanos por WhatsApp!">
-    <title>Camerino JIP | Catálogo | Tapetes Personalizados con Arte Tufting</title>
-  <link href="./images/camerino.jpeg" rel="icon" type="image/svg" />
-  <link rel="stylesheet" href="styles.css" />
-  <link rel="stylesheet" href="catalogo.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catálogo | Camerino JIP</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap">
   <script src="https://checkout.bold.co/library/boldPaymentButton.js"></script>
+  <link rel="stylesheet" href="catalogo.css" />
+
 </head>
 <body>
   <div class="container">
     <h1>Catálogo de Tapetes</h1>
     <div class="grid" id="catalogo"></div>
+  </div>
 
-    <div class="carrito">
-      <h2>🛒 Carrito de Compras</h2>
-      <ul id="lista-carrito"></ul>
-      <div class="total">
-        <span>Total:</span>
-        <span id="total-precio">$0</span>
-      </div>
-      
-      <!-- Botones de pago alineados horizontalmente -->
-      <div class="botones-pago">
-        <button class="btn" onclick="pagarConBold()">Pagar Online</button>
-        <button class="btn" onclick="realizarAbono()">Abonar</button> <!-- Botón para abono -->
-      </div>
+  <button class="boton-flotante" onclick="mostrarCarrito()">🛒</button>
+
+  <div class="carrito oculto" id="carrito-lateral">
+    <button class="cerrar-carrito" onclick="cerrarCarrito()">✕</button>
+    <h2>🛒 Carrito de Compras</h2>
+    <ul id="lista-carrito"></ul>
+    <div class="total">
+      <span>Total:</span>
+      <span id="total-precio">$0</span>
+    </div>
+    <div class="botones-pago">
+      <button class="btn" onclick="pagarConBold()">Finalizar compra</button>
+      <button class="btn" onclick="realizarAbono()">Abonar</button>
     </div>
   </div>
 
   <div id="notification" class="notification"></div>
-<script type="text/javascript" src="index.js"></script>
+
 <div style="text-align: center; margin-top: 2rem;">
   <a href="https://camerinojip.com/" class="boton-volver">
     ← Volver a la Página Principal
   </a>
 </div>
 
-
+<script type="text/javascript" src="index.js"></script>
 </body>
 </html>

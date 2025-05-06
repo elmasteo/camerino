@@ -5,10 +5,10 @@ body::before {
       left: 0;
       width: 100%;
       height: 100%;
-      background-image: url('./images/camerino.jpeg'); /* Ruta de tu logo */
+      background-image: url('./images/camerino.jpeg');
       background-size: cover;
       background-position: center;
-      filter: blur(8px) brightness(0.3); /* Difuminado y oscurecido */
+      filter: blur(8px) brightness(0.3);
       opacity: 0.7;
       z-index: -1;
     }
@@ -18,7 +18,6 @@ body::before {
       padding: 0;
       background: #f9f9f9;
       color: #333;
-
     }
     .container {
       max-width: 1200px;
@@ -28,20 +27,18 @@ body::before {
     h1 {
       text-align: center;
       margin-bottom: 2rem;
-      font-size: 3rem; /* Aumentar el tamaño de la fuente */
-      font-weight: 700; /* Hacer que sea más grueso */
-      text-transform: uppercase; /* Convertir a mayúsculas */
-      color: #fff; /* Color blanco para un contraste con el fondo */
-      text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3); /* Agregar sombra para dar más profundidad */
-      letter-spacing: 2px; /* Espaciado entre letras para un toque más moderno */
-      transition: all 0.3s ease; /* Agregar una transición suave */
+      font-size: 3rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: #fff;
+      text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
+      letter-spacing: 2px;
+      transition: all 0.3s ease;
     }
-
     h1:hover {
-      transform: scale(1.05); /* Aumentar ligeramente el tamaño cuando se pasa el mouse */
-      text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5); /* Intensificar la sombra en hover */
+      transform: scale(1.05);
+      text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
     }
-
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -82,16 +79,38 @@ body::before {
       border-radius: 8px;
       cursor: pointer;
       transition: background 0.3s;
+      margin-top: 0.5rem;
     }
     .btn:hover {
       background: #444;
     }
     .carrito {
-      margin-top: 3rem;
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 350px;
+      height: 100%;
       background: white;
-      border-radius: 16px;
-      padding: 2rem;
-      box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+      box-shadow: -2px 0 10px rgba(0,0,0,0.15);
+      z-index: 999;
+      padding: 2rem 1rem;
+      overflow-y: auto;
+      transition: right 0.3s ease;
+    }
+    .carrito.oculto {
+      right: -400px;
+    }
+    .carrito.activo {
+      right: 0;
+    }
+    .cerrar-carrito {
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      background: transparent;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
     }
     .carrito h2 {
       font-size: 1.5rem;
@@ -117,42 +136,56 @@ body::before {
     }
     .notification {
       position: fixed;
-      top: 1rem;
-      right: 1rem;
-      background-color: #2ecc71;
-      color: #fff;
-      padding: 0.75rem 1.2rem;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #4CAF50;
+      color: white;
+      padding: 10px 20px;
       border-radius: 8px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-      z-index: 1000;
+      font-size: 1rem;
+      display: none;
       opacity: 0;
-      transform: translateY(-20px);
-      transition: opacity 0.3s ease, transform 0.3s ease;
-      font-size: 0.95rem;
-      max-width: 90%;
-      width: auto;
-      word-break: break-word;
+      transition: opacity 0.5s ease;
+      z-index: 1000;
     }
-
     .notification.show {
+      display: block;
       opacity: 1;
-      transform: translateY(0);
     }
-
     .notification.remove {
-      background-color: #e74c3c;
+      background: crimson;
     }
-
+    .boton-flotante {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: #111;
+      color: white;
+      border: none;
+      padding: 10px;
+      border-radius: 50%;
+      font-size: 1.5rem;
+      cursor: pointer;
+      z-index: 1000;
+    }
     .botones-pago {
+      margin-top: 1.5rem;
       display: flex;
-      justify-content: space-between;
-      margin-top: 1rem;
+      flex-direction: column;
+      gap: 0.5rem;
     }
-    .botones-pago .btn {
-      width: 48%;
+    @media (max-width: 480px) {
+      .carrito {
+        width: 100%;
+        padding: 1.5rem 1rem;
+      }
+      .btn {
+        padding: 0.75rem;
+      }
     }
 
-      .boton-volver {
+     .boton-volver {
     display: inline-block;
     background-color: #2c3e50;
     color: #fff;
@@ -186,3 +219,81 @@ body::before {
     opacity: 1;
     transform: translateX(0);
   }
+
+/* Estilos para el carrito en dispositivos pequeños */
+@media (max-width: 480px) {
+  /* El carrito está oculto por defecto */
+  .carrito {
+    position: fixed;
+    top: 0;
+    right: -100%; /* Fuera de la pantalla completamente */
+    width: 80%; /* Asegura que no ocupe toda la pantalla */
+    max-height: 100vh;
+    padding: 1.5rem;
+    background: white;
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.2);
+    z-index: 999;
+    overflow-y: auto;
+    transition: right 0.3s ease; /* Transición suave */
+  }
+
+  /* Cuando el carrito tiene la clase 'activo', se mueve a la derecha */
+  .carrito.activo {
+    right: 0; /* Se muestra en la pantalla */
+  }
+
+  /* Icono del carrito en la parte superior derecha */
+  .boton-flotante {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: #111;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 1000;
+  }
+
+  /* Botón de cerrar carrito en la parte superior izquierda */
+  .cerrar-carrito {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 0.25rem 0.5rem;
+    border-radius: 50%;
+    font-size: 1.25rem;
+    cursor: pointer;
+    z-index: 1001;
+  }
+
+  /* Estilo del contenido del carrito */
+  .carrito h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .carrito ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .carrito li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.75rem;
+  }
+
+  /* Botones de pago en el carrito */
+  .botones-pago {
+    margin-top: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
