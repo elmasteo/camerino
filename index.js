@@ -129,7 +129,7 @@ function obtenerUrlAbsoluta(ruta) {
     }
 
    function realizarAbono() {
-    const descripcion = "Abono para compra de tapetes personalizados"; // Descripción general
+    const descripcion = "Abono para curso tufting o compra de tapetes personalizados"; // Descripción general
     const imagenUrl = obtenerUrlAbsoluta("./images/camerino.jpeg"); // Imagen genérica o la que prefieras
 
     obtenerCotizacion(descripcion, imagenUrl); // Llamamos a la función para obtener el enlace con monto abierto
