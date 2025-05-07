@@ -5,6 +5,7 @@
       "nombre": "Kid Boo",
       "precio": 360000,
       "imagen": "./images/majinboo.jpeg",
+      "categoria":"tapetes",
       "stock": 1
     },
     {
@@ -12,6 +13,7 @@
       "nombre": "Cell",
       "precio": 360000,
       "imagen": "./images/cell.jpeg",
+      "categoria":"tapetes",
       "stock": 1
     },
     {
@@ -19,6 +21,7 @@
       "nombre": "Deadpool - Wolverine",
       "precio": 260000,
       "imagen": "./images/deadpool.jpeg",
+      "categoria":"tapetes",
       "stock": 1
     },
     {
@@ -26,6 +29,7 @@
       "nombre": "Mario Tortuga",
       "precio": 260000,
       "imagen": "./images/tortuga.jpeg",
+      "categoria":"tapetes",
       "stock": 1
     },
     {
@@ -33,6 +37,7 @@
       "nombre": "Pokebola",
       "precio": 260000,
       "imagen": "./images/pokebola.jpeg",
+      "categoria":"tapetes",
       "stock": 1
     },
     {
@@ -40,6 +45,7 @@
       "nombre": "Sunny - One Piece",
       "precio": 260000,
       "imagen": "./images/sunny.jpeg",
+      "categoria":"tapetes",
       "stock": 1
     },
     {
@@ -47,6 +53,7 @@
       "nombre": "One Piece",
       "precio": 260000,
       "imagen": "./images/onepiece.jpeg",
+      "categoria":"tapetes",
       "stock": 1
     },
     {
@@ -54,6 +61,7 @@
       "nombre": "Playstation",
       "precio": 260000,
       "imagen": "./images/play.jpeg",
+      "categoria":"tapetes",
       "stock": 1
     }
   ]
