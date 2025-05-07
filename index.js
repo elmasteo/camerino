@@ -1,13 +1,18 @@
-const productos = [
-  { id: 1, nombre: "Kid Boo", precio: 360000, imagen: "./images/majinboo.jpeg" },
-  { id: 2, nombre: "Cell", precio: 360000, imagen: "./images/cell.jpeg" },
-  { id: 3, nombre: "Deadpool - Wolverine", precio: 260000, imagen: "./images/deadpool.jpeg" },
-  { id: 4, nombre: "Mario Tortuga", precio: 260000, imagen: "./images/tortuga.jpeg" },
-  { id: 5, nombre: "Pokebola", precio: 260000, imagen: "./images/pokebola.jpeg" },
-  { id: 6, nombre: "Sunny - One Piece", precio: 260000, imagen: "./images/sunny.jpeg" },
-  { id: 7, nombre: "One Piece", precio: 260000, imagen: "./images/onepiece.jpeg" },
-  { id: 8, nombre: "Playstation", precio: 260000, imagen: "./images/play.jpeg" }
-];
+let productos = [];
+
+async function cargarProductos() {
+  try {
+    const response = await fetch('/productos.json');
+    const data = await response.json();
+    productos = data.productos;  // Ajuste aquí
+    renderCatalogo();
+  } catch (error) {
+    console.error("Error cargando productos:", error);
+  }
+}
+
+cargarProductos();
+
     const catalogo = document.getElementById("catalogo");
     const listaCarrito = document.getElementById("lista-carrito");
     const totalPrecio = document.getElementById("total-precio");
@@ -17,9 +22,15 @@ const productos = [
     // Función reutilizable para generar la URL absoluta de una imagen
 function obtenerUrlAbsoluta(ruta) {
   if (ruta.startsWith("http")) return ruta;
-  const baseUrl = "https://camerinojip.com";
-  return ruta.replace(/^\.?\//, `${baseUrl}/`);
+
+  const baseUrl = "https://camerinojip.com/";
+
+  // Quita cualquier "./", "/", o nada al inicio
+  ruta = ruta.replace(/^\.?\/?/, "");
+
+  return `${baseUrl}/${ruta}`;
 }
+
 
     function renderCatalogo() {
       productos.forEach(producto => {
@@ -161,5 +172,3 @@ function obtenerCotizacion(descripcion, imagenUrl) {
     })
     .catch(error => console.log('error', error));
 }
-
-    renderCatalogo();
