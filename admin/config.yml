@@ -24,4 +24,13 @@ collections:
               - { label: "ID", name: "id", widget: "number" }
               - { label: "Nombre", name: "nombre", widget: "string" }
               - { label: "Precio", name: "precio", widget: "number" }
+              - { label: 'Stock', name: 'stock', widget: 'number' }
               - { label: "Imagen", name: "imagen", widget: "image" }
+              - label: "Categoría"
+                name: "categoria"
+                widget: "select"
+                options:
+                  - { label: "Tapetes Personalizados", value: "tapetes" }
+                  - { label: "Impresión 3D", value: "impresion3d" }
+                  - { label: "Indumentaria Deportiva", value: "indumentaria" }
+                  - { label: "Accesorios", value: "accesorios" }

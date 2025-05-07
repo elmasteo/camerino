@@ -297,3 +297,106 @@ body::before {
     gap: 0.5rem;
   }
 }
+
+.menu-categorias-wrapper {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 1001;
+}
+
+.hamburguesa {
+  width: 50px;
+  height: 50px;
+  background: #111;
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 6px;
+  cursor: pointer;
+  z-index: 1001;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.hamburguesa span {
+  width: 30px;
+  height: 4px;
+  background-color: white;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+
+/* Menú oculto */
+.categorias-ocultas {
+  position: absolute;
+  top: 45px;
+  left: 0;
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  border-radius: 10px;
+  list-style: none;
+  padding: 0.5rem 0;
+  margin: 0;
+  display: none;
+  min-width: 200px;
+}
+
+.categorias-ocultas li {
+  padding: 0.75rem 1rem;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.categorias-ocultas li:hover {
+  background-color: #eee;
+}
+
+/* Menú visible cuando se activa */
+.categorias-ocultas.mostrar {
+  display: block;
+}
+
+.controles-cantidad {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 0.5rem;
+}
+
+.boton-cantidad {
+  background-color: #1abc9c;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  font-size: 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.boton-cantidad:hover {
+  background-color: #16a085;
+}
+
+.input-cantidad {
+  width: 40px;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 4px;
+  font-size: 1rem;
+}
+
+.mensaje-stock {
+  color: #f1c40f;
+  font-size: 0.9rem;
+  text-align: center;
+  margin-top: 0.5rem;
+  font-weight: bold;
+  display: none;
+}
