@@ -92,7 +92,7 @@ body::before {
       height: 100%;
       background: white;
       box-shadow: -2px 0 10px rgba(0,0,0,0.15);
-      z-index: 999;
+      z-index: 1100;
       padding: 2rem 1rem;
       overflow-y: auto;
       transition: right 0.3s ease;

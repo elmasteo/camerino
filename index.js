@@ -281,8 +281,11 @@ function modificarCantidadCarrito(index, accion) {
   } else if (accion === 'decrementar') {
     if (item.cantidad > 1) {
       item.cantidad--;
+    } else {
+      eliminarDelCarrito(index);
+      return; 
     }
-  }
+}
 
   actualizarCarrito();
 }
