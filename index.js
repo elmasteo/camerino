@@ -18,7 +18,7 @@ function mostrarProductos(productos) {
     card.className = 'card';
 
     card.innerHTML = `
-      <img src="${obtenerUrlAbsoluta(producto.imagen)}" alt="${producto.nombre}">
+      <img src="${obtenerUrlAbsoluta(producto.imagen)}" alt="${producto.nombre}" onclick="abrirModalImagen('${obtenerUrlAbsoluta(producto.imagen)}')">
       <div class="card-content">
         <h2>${producto.nombre}</h2>
         <p>$${producto.precio.toLocaleString()}</p>
