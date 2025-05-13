@@ -268,6 +268,28 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
+// Mostrar imagen en modal
+function abrirModalImagen(src) {
+  const modal = document.getElementById("modal-imagen");
+  const imagen = document.getElementById("imagen-modal");
+  imagen.src = src;
+  modal.style.display = "flex";
+}
+
+// Cerrar modal desde el botón ✕
+document.getElementById("cerrar-modal").addEventListener("click", () => {
+  document.getElementById("modal-imagen").style.display = "none";
+});
+
+// Cerrar modal haciendo clic en el fondo (no en la imagen)
+document.getElementById("modal-imagen").addEventListener("click", (e) => {
+  // Solo cerrar si se hace clic en el fondo del modal, no en la imagen
+  if (e.target.id === "modal-imagen") {
+    e.currentTarget.style.display = "none";
+  }
+});
+
+
 function modificarCantidadCarrito(index, accion) {
   const item = carrito[index];
   const productoOriginal = productosGlobal.find(p => p.id === item.id);

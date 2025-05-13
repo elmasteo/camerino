@@ -400,3 +400,27 @@ body::before {
   font-weight: bold;
   display: none;
 }
+
+.modal {
+  display: none; /* luego se cambia a flex */
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.8);
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.modal img {
+  max-width: 90%;
+  max-height: 80%;
+}
+
+.cerrar {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+}
