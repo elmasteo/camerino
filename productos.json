@@ -71,6 +71,14 @@
       "stock": 6,
       "imagen": "/images/img_20240729_120151.jpg",
       "categoria": "accesorios"
+    },
+    {
+      "id": 10,
+      "nombre": "Jarra Blue ",
+      "precio": 40000,
+      "stock": 6,
+      "imagen": "/images/jarra1.jpg",
+      "categoria": "accesorios"
     }
   ]
 }
