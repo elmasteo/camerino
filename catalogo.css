@@ -424,3 +424,63 @@ body::before {
   color: white;
   cursor: pointer;
 }
+
+.subcategorias {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+}
+
+.subcategorias button {
+  background-color: #ffc107;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 2rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.subcategorias button:hover {
+  background-color: #ffca2c;
+}
+
+.subcategorias.oculto {
+  display: none;
+}
+
+.submenu {
+  margin-top: 0.5rem;
+  margin-left: 1rem;
+  list-style: none;
+  padding-left: 0.5rem;
+  border-left: 2px solid #ccc;
+}
+
+.submenu li {
+  padding: 0.3rem 0;
+  cursor: pointer;
+  font-size: 0.95rem;
+}
+
+.submenu li:hover {
+  color: #ffc107;
+}
+
+.con-subcategorias > span {
+  cursor: pointer;
+}
+
+#lista-categorias {
+  display: none;
+}
+
+#lista-categorias.mostrar {
+  display: block;
+}
+
+.oculto {
+  display: none;
+}

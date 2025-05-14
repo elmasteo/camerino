@@ -38,27 +38,136 @@ function mostrarProductos(productos) {
 
 
 function filtrarPorCategoria(categoria) {
-  if (categoria === 'todos') {
-    mostrarProductos(productosGlobal);
-  } else {
-    const filtrados = productosGlobal.filter(p => p.categoria === categoria);
-    mostrarProductos(filtrados);
+  ocultarSubcategorias();           // ✅ Asegura que desaparezcan todas
+  contraerTodosLosSubmenus();       // ✅ Cierra cualquier submenú abierto
+
+  const tieneSubcategorias = productosGlobal.some(p => p.categoria === categoria && p.subcategoria);
+
+  if (!tieneSubcategorias) {
+    ocultarMenuCategorias();        // ✅ Oculta menú si no hay subcategorías
   }
+
+  if (tieneSubcategorias) {
+    mostrarSubcategoriasEnMenu(categoria);
+  }
+
+  const productosFiltrados = categoria === 'todos'
+    ? productosGlobal
+    : productosGlobal.filter(p => p.categoria === categoria);
+
+  mostrarProductos(productosFiltrados);
+}
+
+// Suponiendo que ya tienes este fragmento para el filtrado
+document.querySelectorAll('.subcategoria').forEach(btn => {
+  btn.addEventListener('click', (e) => {
+    const subcategoriaSeleccionada = e.target.dataset.subcategoria;
+
+    // 1. Filtrar productos (esto ya lo haces)
+    filtrarProductosPorSubcategoria(subcategoriaSeleccionada);
+
+    // 2. Contraer todas las subcategorías abiertas
+    cerrarSubcategorias();
+  });
+});
+
+// Función que colapsa todas las subcategorías
+function cerrarSubcategorias() {
+  document.querySelectorAll('.subcategorias-container').forEach(container => {
+    container.style.display = 'none';
+  });
+}
+
+function cerrarMenuHamburguesa() {
+  // Oculta el menú completo
+  const menuCategorias = document.getElementById('lista-categorias');
+  menuCategorias.classList.remove('mostrar');
+
+  // Opcional: si tu botón hamburguesa cambia de estado visual (ej. animación)
+  const botonHamburguesa = document.getElementById('toggle-categorias');
+  botonHamburguesa.classList.remove('activo');
+}
+
+
+function mostrarSubcategorias(categoriaPadre) {
+  const contenedor = document.getElementById('subcategorias-container');
+  contenedor.innerHTML = ''; // Limpiar antes
+
+  // Filtrar productos solo de la categoría principal
+  const productosCategoria = productosGlobal.filter(p => p.categoria === categoriaPadre && p.subcategoria);
+  
+  // Obtener subcategorías únicas
+  const subcategorias = [...new Set(productosCategoria.map(p => p.subcategoria))];
+
+  // Crear botones
+  subcategorias.forEach(sub => {
+    const boton = document.createElement('button');
+    boton.textContent = sub;
+    boton.onclick = () => filtrarPorSubcategoria(categoriaPadre, sub);
+    contenedor.appendChild(boton);
+  });
+
+  contenedor.classList.remove('oculto');
+}
+
+function ocultarSubcategorias() {
+  const contenedor = document.getElementById('subcategorias-container');
+  contenedor.innerHTML = '';
+  contenedor.classList.add('oculto');
+}
+
+function filtrarPorSubcategoria(subcategoria) {
+  ocultarSubcategorias();         // Oculta subcategorías externas
+  contraerTodosLosSubmenus();     // Oculta submenús internos personalizados
+  cerrarMenuHamburguesa();        // Cierra el menú hamburguesa completo
+
+  const productosFiltrados = productosGlobal.filter(
+    p => p.subcategoria === subcategoria
+  );
+  mostrarProductos(productosFiltrados);
+}
+
+
+
+function volverAlMenuCategorias() {
+  const submenu = document.getElementById(`submenu-${categoria}`);
+  submenu.classList.add('oculto');
 }
 
 function ocultarMenuCategorias() {
   document.getElementById('lista-categorias').classList.remove('mostrar');
 }
 
-function filtrarPorCategoria(categoria) {
-  if (categoria === 'todos') {
-    mostrarProductos(productosGlobal);
-  } else {
-    const filtrados = productosGlobal.filter(p => p.categoria === categoria);
-    mostrarProductos(filtrados);
+function mostrarSubcategoriasEnMenu(categoria) {
+  const submenu = document.getElementById(`submenu-${categoria}`);
+  if (!submenu) return;
+
+  // Si ya está visible, ocultarlo
+  if (!submenu.classList.contains('oculto')) {
+    submenu.classList.add('oculto');
+    return;
   }
-  ocultarMenuCategorias(); // Ocultar menú al seleccionar
+
+  // Contrae todos los submenús antes de mostrar uno
+  contraerTodosLosSubmenus();
+
+  const subcategoriasSet = new Set(
+    productosGlobal
+      .filter(p => p.categoria === categoria && p.subcategoria)
+      .map(p => p.subcategoria)
+  );
+
+  submenu.innerHTML = '';
+  subcategoriasSet.forEach(subcat => {
+    const li = document.createElement('li');
+    li.textContent = subcat;
+    li.onclick = () => filtrarPorSubcategoria(subcat);
+    submenu.appendChild(li);
+  });
+
+  submenu.classList.remove('oculto');
 }
+
 
     const catalogo = document.getElementById("catalogo");
     const listaCarrito = document.getElementById("lista-carrito");
@@ -251,9 +360,15 @@ document.addEventListener("DOMContentLoaded", () => {
   const lista = document.getElementById("lista-categorias");
 
   if (toggleBtn && lista) {
-    toggleBtn.addEventListener("click", () => {
-      lista.classList.toggle("mostrar");
-    });
+   toggleBtn.addEventListener("click", () => {
+  lista.classList.toggle("mostrar");
+
+  if (lista.classList.contains("mostrar")) {
+    contraerTodosLosSubmenus();
+    ocultarSubcategorias(); // <-- Esta línea es clave
+  }
+});
+
   }
 
   const botonCarrito = document.getElementById("boton-carrito");
@@ -268,6 +383,23 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
+// Cierra el menú hamburguesa si el clic es fuera del menú
+document.addEventListener('click', function (event) {
+  const menu = document.getElementById('lista-categorias');
+  const toggle = document.getElementById('toggle-categorias');
+
+  if (!menu || !toggle) return;
+
+  const hizoClickDentroDelMenu = menu.contains(event.target);
+  const hizoClickEnElBoton = toggle.contains(event.target);
+
+  if (!hizoClickDentroDelMenu && !hizoClickEnElBoton) {
+    menu.classList.remove('mostrar');
+    toggle.classList.remove('activo');
+  }
+});
+
+
 // Mostrar imagen en modal
 function abrirModalImagen(src) {
   const modal = document.getElementById("modal-imagen");
@@ -275,6 +407,15 @@ function abrirModalImagen(src) {
   imagen.src = src;
   modal.style.display = "flex";
 }
+
+function contraerTodosLosSubmenus() {
+  document.querySelectorAll('.submenu').forEach(submenu => {
+    submenu.classList.add('oculto');
+  });
+}
+
+
+
 
 // Cerrar modal desde el botón ✕
 document.getElementById("cerrar-modal").addEventListener("click", () => {

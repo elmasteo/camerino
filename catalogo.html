@@ -24,15 +24,32 @@
   <!-- Menú de categorías oculto -->
   <ul id="lista-categorias" class="categorias-ocultas">
     <li onclick="filtrarPorCategoria('todos')">Todas las categorías</li>
-    <li onclick="filtrarPorCategoria('tapetes')">Tapetes Personalizados</li>
-    <li onclick="filtrarPorCategoria('impresion3d')">Impresión 3D</li>
-    <li onclick="filtrarPorCategoria('indumentaria')">Indumentaria Deportiva</li>
-    <li onclick="filtrarPorCategoria('accesorios')">Accesorios</li>
+    <li class="con-subcategorias">
+      <span onclick="filtrarPorCategoria('tapetes')">Tapetes Personalizados</span>
+      <ul id="submenu-tapetes" class="submenu oculto"></ul>
+    </li>
+
+    <li class="con-subcategorias">
+      <span onclick="filtrarPorCategoria('impresion3d')">Impresión 3D</span>
+      <ul id="submenu-impresion3d" class="submenu oculto"></ul>
+    </li>
+
+    <li class="con-subcategorias">
+      <span onclick="filtrarPorCategoria('accesorios')">Accesorios</span>
+      <ul id="submenu-accesorios" class="submenu oculto"></ul>
+    </li>
+
+    <li class="con-subcategorias">
+      <span onclick="filtrarPorCategoria('indumentaria')">Indumentaria deportiva</span>
+      <ul id="submenu-indumentaria" class="submenu oculto"></ul>
+    </li>
+
   </ul>
 </div>
 
-
     <h1>Catálogo de productos</h1>
+    <div id="subcategorias-container" class="subcategorias oculto"></div>
+
     <div class="grid" id="catalogo"></div>
   </div>
 <!-- Botón flotante del carrito (reutilizado para abrir/cerrar) -->
