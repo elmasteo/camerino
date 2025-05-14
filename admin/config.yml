@@ -25,7 +25,6 @@ collections:
               - { label: "Nombre", name: "nombre", widget: "string" }
               - { label: "Precio", name: "precio", widget: "number" }
               - { label: 'Stock', name: 'stock', widget: 'number' }
-              - { label: "Imagen", name: "imagen", widget: "image" }
               - { label: "Subcategoría", name: "subcategoria", widget: "string", required: false }
               - label: "Categoría"
                 name: "categoria"
@@ -35,3 +34,4 @@ collections:
                   - { label: "Impresión 3D", value: "impresion3d" }
                   - { label: "Indumentaria Deportiva", value: "indumentaria" }
                   - { label: "Accesorios", value: "accesorios" }
+              - { label: "Imagen", name: "imagen", widget: "image" }
