@@ -63,6 +63,15 @@
       "imagen": "./images/play.jpeg",
       "categoria": "tapetes",
       "stock": 1
+    },
+    {
+      "id": 9,
+      "nombre": "Camiseta Millonarios",
+      "precio": 70000,
+      "stock": 12,
+      "subcategoria": "Millonarios",
+      "categoria": "indumentaria",
+      "imagen": "/images/.img-20240119-wa0030.jpg"
     }
   ]
 }
