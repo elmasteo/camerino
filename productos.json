@@ -91,11 +91,12 @@
     },
     {
       "id": 12,
-      "nombre": "Camiseta Millonarios",
+      "nombre": "Camiseta niño",
       "precio": 70000,
       "stock": 12,
       "categoria": "indumentaria",
-      "imagen": "/images/whatsapp-image-2025-05-19-at-11.13.24-am-7-.jpeg"
+      "imagen": "/images/whatsapp-image-2025-05-19-at-11.13.24-am-7-.jpeg",
+      "subcategoria": "Millonarios"
     }
   ]
 }
