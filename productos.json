@@ -65,21 +65,13 @@
       "stock": 1
     },
     {
-      "id": 9,
-      "nombre": "Camiseta Millonarios",
-      "precio": 70000,
-      "stock": 12,
-      "subcategoria": "Millonarios",
-      "categoria": "indumentaria",
-      "imagen": "/images/camisetaa.jpg"
-    },
-    {
       "id": 10,
       "nombre": "Camiseta Miloonarios",
       "precio": 70000,
       "stock": 12,
       "categoria": "indumentaria",
-      "imagen": "/images/whatsapp-image-2025-05-19-at-11.13.25-am.jpeg"
+      "imagen": "/images/whatsapp-image-2025-05-19-at-11.13.25-am.jpeg",
+      "subcategoria": "Millonarios"
     },
     {
       "id": 11,
