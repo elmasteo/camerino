@@ -108,6 +108,15 @@
       "subcategoria": "Nacional",
       "categoria": "indumentaria",
       "imagen": "/images/whatsapp-image-2025-05-19-at-11.13.25-am-3-.jpeg"
+    },
+    {
+      "id": 15,
+      "nombre": "Camiseta Hombre",
+      "precio": 70000,
+      "stock": 12,
+      "subcategoria": "Nacional",
+      "categoria": "indumentaria",
+      "imagen": "/images/whatsapp-image-2025-05-19-at-11.13.25-am-6-.jpeg"
     }
   ]
 }
