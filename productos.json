@@ -90,6 +90,15 @@
       "categoria": "indumentaria",
       "imagen": "/images/whatsapp-image-2025-05-19-at-11.13.24-am-7-.jpeg",
       "subcategoria": "Millonarios"
+    },
+    {
+      "id": 13,
+      "nombre": "Camiseta Hombre",
+      "precio": 70000,
+      "stock": 12,
+      "subcategoria": "Nacional",
+      "categoria": "indumentaria",
+      "imagen": "/images/whatsapp-image-2025-05-19-at-11.13.24-am-4-.jpeg"
     }
   ]
 }
