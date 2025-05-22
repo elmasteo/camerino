@@ -457,3 +457,58 @@ function modificarCantidadCarrito(index, accion) {
   actualizarCarrito();
 }
 
+const categoriasDisponibles = [
+  { id: 'tapetes', icon: '/icons/tapete.svg', label: 'Tapetes' },
+  { id: 'impresion3d', icon: '/icons/impresion.svg', label: 'Impresión 3D' },
+  { id: 'indumentaria', icon: '/icons/camisa.svg', label: 'Indumentaria Deportiva' },
+  { id: 'accesorios', icon: '/icons/accesorios.svg', label: 'Accesorios' }
+];
+
+let categoriaActiva = null;
+
+async function crearBotonesFlotantes() {
+  const contenedor = document.getElementById('botones-flotantes');
+  if (!contenedor) return;
+
+  const svgTexts = await Promise.all(
+    categoriasDisponibles.map(cat => fetch(cat.icon).then(res => res.text()))
+  );
+
+  categoriasDisponibles.forEach((cat, i) => {
+    const wrapper = document.createElement('div');
+    wrapper.className = 'boton-categoria-wrapper';
+    wrapper.dataset.categoria = cat.id;
+    wrapper.onclick = () => {
+      filtrarPorCategoria(cat.id);
+      marcarCategoriaActiva(cat.id);
+    };
+
+    const boton = document.createElement('div');
+    boton.className = 'boton-categoria';
+    boton.title = cat.id;
+    boton.innerHTML = svgTexts[i];
+
+    const etiqueta = document.createElement('span');
+    etiqueta.className = 'boton-etiqueta';
+    etiqueta.textContent = cat.label;
+
+    wrapper.appendChild(boton);
+    wrapper.appendChild(etiqueta);
+    contenedor.appendChild(wrapper);
+  });
+}
+
+function marcarCategoriaActiva(id) {
+  const botones = document.querySelectorAll('.boton-categoria-wrapper');
+  botones.forEach(btn => {
+    if (btn.dataset.categoria === id) {
+      btn.classList.add('activo');
+    } else {
+      btn.classList.remove('activo');
+    }
+  });
+  categoriaActiva = id;
+}
+
+document.addEventListener('DOMContentLoaded', crearBotonesFlotantes);
+
