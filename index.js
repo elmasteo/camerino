@@ -289,6 +289,9 @@ function modificarCantidad(idProducto, cambio) {
 
     function pagarConBold() {
       if (carrito.length === 0) return alert("Tu carrito está vacío.");
+      const productosResumen = carrito.map(p => (
+        `${p.nombre} x${p.cantidad} - $${p.precio.toLocaleString("es-CO")}`
+      )).join('\n');
       const monto = carrito.reduce((sum, item) => sum + (item.precio * item.cantidad), 0);
       const imagenUrl = obtenerUrlAbsoluta(carrito[0].imagen);
       const total = carrito.reduce((sum, p) => sum + p.precio * p.cantidad, 0);
