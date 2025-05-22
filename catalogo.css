@@ -556,3 +556,27 @@ body::before {
   fill: #fff !important;
 }
 
+@media (max-width: 480px) {
+  .contenedor-botones {
+    gap: 0.5rem;
+  }
+
+  .boton-categoria-wrapper {
+    width: 60px;
+  }
+
+  .boton-categoria {
+    width: 40px;
+    height: 40px;
+    padding: 0.3rem;
+  }
+
+  .boton-categoria svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .boton-categoria-wrapper span {
+    font-size: 0.6rem;
+  }
+}
