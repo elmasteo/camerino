@@ -139,26 +139,38 @@ body::before {
     }
     .notification {
       position: fixed;
-      top: 20px;
-      left: 50%;
-      transform: translateX(-50%);
-      background: #4CAF50;
-      color: white;
-      padding: 10px 20px;
-      border-radius: 8px;
-      font-size: 1rem;
-      display: none;
+      top: 10px;
+      right: 10px;
+      padding: 12px 20px;
+      border-radius: 6px;
+      font-weight: bold;
+      color: #000;
       opacity: 0;
-      transition: opacity 0.5s ease;
-      z-index: 1000;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+      z-index: 9999;
     }
+
     .notification.show {
-      display: block;
       opacity: 1;
+      pointer-events: auto;
     }
+
+    .notification.success {
+      background-color: #caffc1; /* verde claro */
+      border: 1px solid #3ba23b;
+    }
+
+    .notification.warning {
+      background-color: #fff3b0; /* amarillo */
+      border: 1px solid #e0b200;
+    }
+
     .notification.remove {
-      background: crimson;
+      background-color: #ffcccc; /* rojo claro */
+      border: 1px solid #cc0000;
     }
+
     .boton-flotante {
       position: fixed;
       top: 20px;

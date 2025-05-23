@@ -211,7 +211,7 @@ function agregarAlCarrito(idProducto) {
 
   if (cantidad > producto.stock) {
     document.getElementById(`mensaje-stock-${idProducto}`).style.display = 'block';
-    return;
+    return; // ⛔ Salida temprana, NO muestra vista previa
   }
 
   const productoEnCarrito = carrito.find(item => item.id === producto.id);
@@ -219,24 +219,27 @@ function agregarAlCarrito(idProducto) {
   if (productoEnCarrito) {
     if (productoEnCarrito.cantidad + cantidad <= producto.stock) {
       productoEnCarrito.cantidad += cantidad;
-      mostrarNotificacion(`Cantidad de ${producto.nombre} aumentada a ${productoEnCarrito.cantidad}`);
+      mostrarNotificacion(`Cantidad de ${producto.nombre} aumentada a ${productoEnCarrito.cantidad}`, 'success');
+      mostrarVistaPrevia(producto); // ✅ Solo si se pudo agregar
     } else {
-      mostrarNotificacion(`No hay suficiente stock de ${producto.nombre}`);
+      mostrarNotificacion(`No hay suficiente stock de ${producto.nombre}`, 'warning');
+      return;
     }
   } else {
     carrito.push({ ...producto, cantidad });
-    mostrarNotificacion(`${producto.nombre} agregado al carrito`);
+    mostrarNotificacion(`${producto.nombre} agregado al carrito`, 'success');
+    mostrarVistaPrevia(producto); // ✅ Solo si se agregó nuevo
   }
 
   actualizarCarrito();
-  mostrarVistaPrevia(producto);
 }
+
 
     function eliminarDelCarrito(index) {
       const productoEliminado = carrito[index];
       carrito.splice(index, 1);
       actualizarCarrito();
-      mostrarNotificacion(`Producto "${productoEliminado.nombre}" eliminado del carrito.`, true);
+      mostrarNotificacion(`Producto "${productoEliminado.nombre}" eliminado del carrito.`, 'remove');
     }
 
 function actualizarCarrito() {
@@ -266,6 +269,7 @@ function actualizarCarrito() {
 
   totalPrecio.textContent = "$" + total.toLocaleString();
 }
+
 
 function modificarCantidad(idProducto, cambio) {
   const input = document.getElementById(`cantidad-${idProducto}`);
@@ -299,26 +303,44 @@ function modificarCantidad(idProducto, cambio) {
       document.getElementById('carrito-lateral').classList.add('oculto');
     }
 
-    function mostrarNotificacion(mensaje, esEliminacion = false) {
-      notification.textContent = mensaje;
-      notification.classList.add('show');
-      if (esEliminacion) notification.classList.add('remove');
-      setTimeout(() => {
-        notification.classList.remove('show', 'remove');
-      }, 3000);
-    }
+    function mostrarNotificacion(mensaje, tipo = 'info') {
+  const notification = document.getElementById('notification');
+  notification.textContent = mensaje;
+
+  notification.classList.remove('success', 'warning', 'remove');
+  notification.classList.add('show');
+
+  if (tipo === 'success') {
+    notification.classList.add('success');
+  } else if (tipo === 'warning') {
+    notification.classList.add('warning');
+  } else if (tipo === 'remove') {
+    notification.classList.add('remove');
+  }
+
+  setTimeout(() => {
+    notification.classList.remove('show', 'success', 'warning', 'remove');
+  }, 3000);
+}
+
 
     function pagarConBold() {
       if (carrito.length === 0) return alert("Tu carrito está vacío.");
+
       const productosResumen = carrito.map(p => (
         `${p.nombre} x${p.cantidad} - $${p.precio.toLocaleString("es-CO")}`
       )).join('\n');
+
+      const total = carrito.reduce((sum, p) => sum + p.precio * p.cantidad, 0);
+
+      const mensaje = `🧾 *Resumen de tu pedido:*\n\n${productosResumen}\n\n💰 *Total:* $${total.toLocaleString("es-CO")}\n\nGracias por tu compra en Camerino JIP 🎉`;
+
+      const callback_url = `https://wa.me/+573177657335?text=${encodeURIComponent(mensaje)}`;
+
+      const descripcion = "Pedido Camerino JIP";
+
       const monto = carrito.reduce((sum, item) => sum + (item.precio * item.cantidad), 0);
       const imagenUrl = obtenerUrlAbsoluta(carrito[0].imagen);
-      const total = carrito.reduce((sum, p) => sum + p.precio * p.cantidad, 0);
-      const mensaje = `🧾 *Resumen de tu pedido:*\n\n${productosResumen}\n\n💰 *Total:* $${total.toLocaleString("es-CO")}\n\nGracias por tu compra en Camerino JIP 🎉`;
-      const callback_url = `https://wa.me/+573177657335?text=${encodeURIComponent(mensaje)}`;
-      const descripcion = "Pedido Camerino JIP";
 
       const raw = JSON.stringify({
         monto,
@@ -439,9 +461,6 @@ function contraerTodosLosSubmenus() {
   });
 }
 
-
-
-
 // Cerrar modal desde el botón ✕
 document.getElementById("cerrar-modal").addEventListener("click", () => {
   document.getElementById("modal-imagen").style.display = "none";
@@ -464,7 +483,7 @@ function modificarCantidadCarrito(index, accion) {
     if (item.cantidad < productoOriginal.stock) {
       item.cantidad++;
     } else {
-      mostrarNotificacion(`No hay suficiente stock de ${item.nombre}`);
+      mostrarNotificacion(`No hay suficiente stock de ${item.nombre}`, 'warning');
     }
   } else if (accion === 'decrementar') {
     if (item.cantidad > 1) {
@@ -478,6 +497,7 @@ function modificarCantidadCarrito(index, accion) {
   actualizarCarrito();
 }
 
+/*probando ando*/
 const categoriasDisponibles = [
   { id: 'tapetes', icon: '/icons/tapete.svg', label: 'Tapetes' },
   { id: 'impresion3d', icon: '/icons/impresion.svg', label: 'Impresión 3D' },
@@ -532,4 +552,5 @@ function marcarCategoriaActiva(id) {
 }
 
 document.addEventListener('DOMContentLoaded', crearBotonesFlotantes);
+
 
