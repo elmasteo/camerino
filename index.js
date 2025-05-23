@@ -187,6 +187,18 @@ function obtenerUrlAbsoluta(ruta) {
   return `${baseUrl}/${ruta}`;
 }
 
+function mostrarVistaPrevia(producto) {
+  const preview = document.getElementById('preview-panel');
+  document.getElementById('preview-image').src = producto.imagen;
+  document.getElementById('preview-name').textContent = producto.nombre;
+  
+  preview.classList.remove('hidden');
+
+  clearTimeout(preview._timeout);
+  preview._timeout = setTimeout(() => {
+    preview.classList.add('hidden');
+  }, 3000);
+}
 
 function agregarAlCarrito(idProducto) {
   mostrarCarrito();
@@ -217,6 +229,7 @@ function agregarAlCarrito(idProducto) {
   }
 
   actualizarCarrito();
+  mostrarVistaPrevia(producto);
 }
 
     function eliminarDelCarrito(index) {
