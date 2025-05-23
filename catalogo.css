@@ -85,18 +85,18 @@ body::before {
       background: #444;
     }
     .carrito {
-      position: fixed;
-      top: 0;
-      right: 0;
-      width: 350px;
-      height: 100%;
-      background: white;
-      box-shadow: -2px 0 10px rgba(0,0,0,0.15);
-      z-index: 999;
-      padding: 2rem 1rem;
-      overflow-y: auto;
-      transition: right 0.3s ease;
-    }
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 350px;
+    height: 100%;
+    background: white;
+    box-shadow: -2px 0 10px rgba(0,0,0,0.15);
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+  }
     .carrito.oculto {
       right: -400px;
     }
@@ -120,6 +120,9 @@ body::before {
       list-style: none;
       padding: 0;
       margin: 0;
+      flex: 1;
+      overflow-y: auto;
+      margin-bottom: 1rem;
     }
     .carrito li {
       display: flex;
@@ -170,10 +173,12 @@ body::before {
       z-index: 1000;
     }
     .botones-pago {
-      margin-top: 1.5rem;
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
+      position: sticky;
+      bottom: 0;
+      background: white;
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+      border-top: 1px solid #eee;
     }
     @media (max-width: 480px) {
       .carrito {
@@ -276,12 +281,6 @@ body::before {
     margin-bottom: 1rem;
   }
 
-  .carrito ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-
   .carrito li {
     display: flex;
     justify-content: space-between;
@@ -291,10 +290,12 @@ body::before {
 
   /* Botones de pago en el carrito */
   .botones-pago {
-    margin-top: 1.5rem;
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
+    position: sticky;
+    bottom: 0;
+    background: white;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    border-top: 1px solid #eee;
   }
 }
 
@@ -579,4 +580,85 @@ body::before {
   .boton-categoria-wrapper span {
     font-size: 0.6rem;
   }
+}
+
+#lista-carrito {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.item-carrito {
+  display: flex;
+  flex-direction: column;
+  background: #f9f9f9;
+  padding: 0.8rem;
+  border-radius: 10px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.detalle-producto {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  margin-bottom: 0.6rem;
+}
+
+.detalle-producto .nombre {
+  font-weight: bold;
+  font-size: 1rem;
+  word-break: break-word;
+}
+
+.detalle-producto .precio {
+  color: #333;
+  font-size: 0.95rem;
+}
+
+.acciones-producto {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.acciones-producto button {
+  padding: 0.3rem 0.6rem;
+  font-size: 1rem;
+  border: none;
+  background: #ddd;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.acciones-producto button:hover {
+  background: #bbb;
+}
+
+.acciones-producto span {
+  min-width: 20px;
+  text-align: center;
+}
+
+.acciones-producto .eliminar {
+  background: crimson;
+  color: white;
+}
+
+.acciones-producto .eliminar:hover {
+  background: #b30000;
+}
+
+.botones-pago .total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+  font-size: 1.2rem;
+  padding: 0 1rem;
+  margin-bottom: 0.5rem;
 }

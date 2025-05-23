@@ -226,19 +226,27 @@ function agregarAlCarrito(idProducto) {
       mostrarNotificacion(`Producto "${productoEliminado.nombre}" eliminado del carrito.`, true);
     }
 
-  function actualizarCarrito() {
+function actualizarCarrito() {
   listaCarrito.innerHTML = "";
   let total = 0;
 
   carrito.forEach((item, index) => {
     const li = document.createElement("li");
+    li.className = "item-carrito";
+
     li.innerHTML = `
-      <span>${item.nombre}</span>
-      <span>$${item.precio.toLocaleString()} x ${item.cantidad}</span>
-      <button onclick="modificarCantidadCarrito(${index}, 'incrementar')">+</button>
-      <button onclick="modificarCantidadCarrito(${index}, 'decrementar')">-</button>
-      <button onclick="eliminarDelCarrito(${index})" style="margin-left: 1rem; background: crimson; color: white; border: none; padding: 0.3rem 0.6rem; border-radius: 6px; cursor: pointer;">✕</button>
+      <div class="detalle-producto">
+        <p class="nombre">${item.nombre}</p>
+        <p class="precio">$${item.precio.toLocaleString()} x ${item.cantidad}</p>
+      </div>
+      <div class="acciones-producto">
+        <button onclick="modificarCantidadCarrito(${index}, 'decrementar')">-</button>
+        <span>${item.cantidad}</span>
+        <button onclick="modificarCantidadCarrito(${index}, 'incrementar')">+</button>
+        <button class="eliminar" onclick="eliminarDelCarrito(${index})">✕</button>
+      </div>
     `;
+
     listaCarrito.appendChild(li);
     total += item.precio * item.cantidad;
   });

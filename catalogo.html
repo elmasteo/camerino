@@ -6,7 +6,7 @@
   <meta name="description" content="Explora el arte del tufting con Camerino JIP. Diseñamos tapetes personalizados únicos y llenos de estilo. ¡Revisa nuestro catálogo o contáctanos por WhatsApp!">
     <title>Catálogo | Camerino JIP | Tapetes Personalizados con Arte Tufting</title>
     <link href="./images/camerinoicon.ico" rel="icon" type="image/svg">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap">  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <script src="https://checkout.bold.co/library/boldPaymentButton.js"></script>
   <link rel="stylesheet" href="catalogo.css" />
@@ -48,7 +48,10 @@
   </ul>
 </div>
 
+    <!--<h1>Catálogo de productos</h1>-->
     <div id="subcategorias-container" class="subcategorias oculto"></div>
+
+    <!--probando ando-->
     <div id="botones-flotantes" class="contenedor-botones"></div>
     <div class="grid" id="catalogo"></div>
   </div>
@@ -59,11 +62,12 @@
 <div class="carrito oculto" id="carrito-lateral">
   <h2>🛒 Carrito de Compras</h2>
   <ul id="lista-carrito"></ul>
-  <div class="total">
+  
+  <div class="botones-pago">
+    <div class="total">
     <span>Total:</span>
     <span id="total-precio">$0</span>
   </div>
-  <div class="botones-pago">
     <button class="btn" onclick="pagarConBold()">Finalizar compra</button>
     <button class="btn" onclick="realizarAbono()">Abonar</button>
   </div>
@@ -83,6 +87,8 @@
   <span id="cerrar-modal" class="cerrar">✕</span>
   <img id="imagen-modal" class="imagen-modal" src="" alt="Ampliada">
 </div>
+
+
 
 
 <script type="text/javascript" src="index.js"></script>
