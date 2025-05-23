@@ -232,6 +232,15 @@ function agregarAlCarrito(idProducto) {
   }
 
   actualizarCarrito();
+    // Asegura que el botón del carrito muestre ❌ al abrirse
+  const carritoLateral = document.getElementById("carrito-lateral");
+  const botonCarrito = document.getElementById("boton-carrito");
+
+  if (carritoLateral && botonCarrito) {
+    carritoLateral.classList.add("activo");
+    carritoLateral.classList.remove("oculto");
+    botonCarrito.textContent = "❌";
+  }
 }
 
 

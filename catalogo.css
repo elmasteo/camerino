@@ -243,15 +243,17 @@ body::before {
   .carrito {
     position: fixed;
     top: 0;
-    right: -100%; /* Fuera de la pantalla completamente */
-    width: 80%; /* Asegura que no ocupe toda la pantalla */
-    max-height: 100vh;
-    padding: 1.5rem;
+    right: 0;
+    width: 75%; 
+    height: 100%;
+    padding: 1rem;
     background: white;
     box-shadow: -2px 0 10px rgba(0, 0, 0, 0.2);
     z-index: 999;
     overflow-y: auto;
     transition: right 0.3s ease; /* Transición suave */
+    display: flex;
+    flex-direction: column;
   }
 
   /* Cuando el carrito tiene la clase 'activo', se mueve a la derecha */
@@ -306,7 +308,7 @@ body::before {
     bottom: 0;
     background: white;
     padding-top: 1rem;
-    padding-bottom: 1rem;
+    padding-bottom: 1.5rem;
     border-top: 1px solid #eee;
   }
 }
@@ -315,7 +317,7 @@ body::before {
   position: fixed;
   top: 20px;
   left: 20px;
-  z-index: 1001;
+  z-index: 998;
 }
 
 .hamburguesa {
@@ -697,4 +699,5 @@ body::before {
   height: 0;
   overflow: hidden;
 }
+
 
