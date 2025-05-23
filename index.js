@@ -201,8 +201,6 @@ function mostrarVistaPrevia(producto) {
 }
 
 function agregarAlCarrito(idProducto) {
-  mostrarCarrito();
-
   const cantidadInput = document.getElementById(`cantidad-${idProducto}`);
   const cantidad = parseInt(cantidadInput.value);
 
@@ -211,7 +209,7 @@ function agregarAlCarrito(idProducto) {
 
   if (cantidad > producto.stock) {
     document.getElementById(`mensaje-stock-${idProducto}`).style.display = 'block';
-    return; // ⛔ Salida temprana, NO muestra vista previa
+    return; // ⛔ Salida temprana, NO muestra vista previa ni carrito
   }
 
   const productoEnCarrito = carrito.find(item => item.id === producto.id);
@@ -220,7 +218,7 @@ function agregarAlCarrito(idProducto) {
     if (productoEnCarrito.cantidad + cantidad <= producto.stock) {
       productoEnCarrito.cantidad += cantidad;
       mostrarNotificacion(`Cantidad de ${producto.nombre} aumentada a ${productoEnCarrito.cantidad}`, 'success');
-      mostrarVistaPrevia(producto); // ✅ Solo si se pudo agregar
+      mostrarVistaPrevia(producto);
     } else {
       mostrarNotificacion(`No hay suficiente stock de ${producto.nombre}`, 'warning');
       return;
@@ -228,11 +226,13 @@ function agregarAlCarrito(idProducto) {
   } else {
     carrito.push({ ...producto, cantidad });
     mostrarNotificacion(`${producto.nombre} agregado al carrito`, 'success');
-    mostrarVistaPrevia(producto); // ✅ Solo si se agregó nuevo
+    mostrarVistaPrevia(producto);
   }
 
   actualizarCarrito();
-    // Asegura que el botón del carrito muestre ❌ al abrirse
+
+  // ✅ Solo mostrar carrito si todo fue exitoso
+  mostrarCarrito();
   const carritoLateral = document.getElementById("carrito-lateral");
   const botonCarrito = document.getElementById("boton-carrito");
 
