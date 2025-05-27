@@ -259,8 +259,26 @@
       "categoria": "indumentaria",
       "subcategoria": "Nacional",
       "stock": 12,
-      "precio": 65000,
+      "precio": 70000,
       "nombre": "Camiseta presentación azul"
+    },
+    {
+      "imagen": "/images/img-whatsapp-image-2025-05-22-at-8.13.01-am-4-.jpeg.png",
+      "categoria": "indumentaria",
+      "subcategoria": "Nacional",
+      "stock": 12,
+      "precio": 70000,
+      "nombre": "Camiseta presentación Postobón",
+      "id": 32
+    },
+    {
+      "id": 33,
+      "stock": 12,
+      "categoria": "indumentaria",
+      "subcategoria": "Nacional",
+      "imagen": "/images/img-whatsapp-image-2025-05-22-at-8.13.01-am-2-.jpeg.png",
+      "precio": 70000,
+      "nombre": "Leona negra"
     }
   ]
 }
