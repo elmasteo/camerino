@@ -180,6 +180,15 @@
       "categoria": "indumentaria",
       "subcategoria": "Camiseta Santa Fe",
       "imagen": "/images/img-whatsapp-image-2025-05-19-at-9.03.36-pm-2-.jpeg.png"
+    },
+    {
+      "id": 23,
+      "nombre": "Local Dama",
+      "precio": 70000,
+      "stock": 12,
+      "subcategoria": "Camiseta Dama",
+      "categoria": "indumentaria",
+      "imagen": "/images/img-whatsapp-image-2025-05-19-at-9.03.36-pm-1-.jpeg.png"
     }
   ]
 }
