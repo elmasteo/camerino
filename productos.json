@@ -521,6 +521,24 @@
       "imagen": "/images/img-whatsapp-image-2025-05-22-at-8.13.06-am-5-.jpeg.png",
       "subcategoria": "Colombia",
       "nombre": "100 años dama"
+    },
+    {
+      "id": 60,
+      "nombre": "100 años hombre",
+      "precio": 70000,
+      "stock": 12,
+      "subcategoria": "Colombia",
+      "categoria": "indumentaria",
+      "imagen": "/images/img-whatsapp-image-2025-05-22-at-8.13.06-am-6-.jpeg.png"
+    },
+    {
+      "id": 59,
+      "nombre": "100 años niño",
+      "precio": 70000,
+      "stock": 12,
+      "subcategoria": "Colombia",
+      "categoria": "indumentaria",
+      "imagen": "/images/whatsapp-image-2025-05-19-at-11.13.25-am-1-.jpeg"
     }
   ]
 }
