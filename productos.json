@@ -254,13 +254,13 @@
       "subcategoria": "Nacional"
     },
     {
-      "imagen": "/images/img-whatsapp-image-2025-05-22-at-8.12.57-am-1-.jpeg.png",
-      "stock": 12,
-      "subcategoria": "Nacional",
+      "id": 31,
+      "imagen": "/images/img-whatsapp-image-2025-05-22-at-8.12.57-am.jpeg.png",
       "categoria": "indumentaria",
-      "precio": 70000,
-      "nombre": "Uniforme visitante niño",
-      "id": 31
+      "subcategoria": "Nacional",
+      "stock": 12,
+      "precio": 65000,
+      "nombre": "Camiseta presentación azul"
     }
   ]
 }
