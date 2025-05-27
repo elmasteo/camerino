@@ -494,6 +494,15 @@
       "categoria": "indumentaria",
       "imagen": "/images/img-whatsapp-image-2025-05-22-at-8.13.04-am-6-.jpeg.png",
       "nombre": "Barcelona 2"
+    },
+    {
+      "id": 57,
+      "precio": 70000,
+      "stock": 12,
+      "categoria": "indumentaria",
+      "imagen": "/images/img-whatsapp-image-2025-05-22-at-8.13.00-am.jpeg.png",
+      "nombre": "America blanca",
+      "subcategoria": "Equipos nacionales"
     }
   ]
 }
