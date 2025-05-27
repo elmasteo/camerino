@@ -218,13 +218,49 @@
       "subcategoria": "Santa fe"
     },
     {
-      "id": 25,
+      "id": 27,
       "imagen": "/images/img-whatsapp-image-2025-05-22-at-8.13.03-am-5-.jpeg.png",
       "stock": 12,
       "subcategoria": "Santa fe",
       "precio": 70000,
       "nombre": "Camiseta Presentación",
       "categoria": "indumentaria"
+    },
+    {
+      "id": 28,
+      "stock": 12,
+      "categoria": "indumentaria",
+      "imagen": "/images/img-whatsapp-image-2025-05-22-at-8.13.00-am-3-.jpeg.png",
+      "subcategoria": "Nacional",
+      "precio": 70000,
+      "nombre": "Sam blanca"
+    },
+    {
+      "id": 29,
+      "nombre": "Sam verde",
+      "precio": 70000,
+      "stock": 12,
+      "subcategoria": "Nacional",
+      "categoria": "indumentaria",
+      "imagen": "/images/img-whatsapp-image-2025-05-22-at-8.13.01-am.jpeg.png"
+    },
+    {
+      "id": 30,
+      "stock": 12,
+      "categoria": "indumentaria",
+      "imagen": "/images/img-whatsapp-image-2025-05-22-at-8.12.56-am.jpeg.png",
+      "nombre": "Uniforme local niño",
+      "precio": 70000,
+      "subcategoria": "Nacional"
+    },
+    {
+      "imagen": "/images/img-whatsapp-image-2025-05-22-at-8.12.57-am-1-.jpeg.png",
+      "stock": 12,
+      "subcategoria": "Nacional",
+      "categoria": "indumentaria",
+      "precio": 70000,
+      "nombre": "Uniforme visitante niño",
+      "id": 31
     }
   ]
 }
