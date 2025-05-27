@@ -18,7 +18,12 @@ function mostrarProductos(productos) {
     card.className = 'card';
 
     card.innerHTML = `
-      <img src="${obtenerUrlAbsoluta(producto.imagen)}" alt="${producto.nombre}" onclick="abrirModalImagen('${obtenerUrlAbsoluta(producto.imagen)}')">
+      <img
+        src="https://imagecdn.app/v2/image/${encodeURIComponent(obtenerUrlAbsoluta(producto.imagen))}?w=400&auto=webp"
+        alt="${producto.nombre}"
+        loading="lazy"
+        onclick="abrirModalImagen('${obtenerUrlAbsoluta(producto.imagen)}')"
+      />
       <div class="card-content">
         <h2>${producto.nombre}</h2>
         <p>$${producto.precio.toLocaleString()}</p>
@@ -179,7 +184,7 @@ function mostrarSubcategoriasEnMenu(categoria) {
 function obtenerUrlAbsoluta(ruta) {
   if (ruta.startsWith("http")) return ruta;
 
-  const baseUrl = "https://camerinojip.com/";
+  const baseUrl = "https://camerinojip.com";
 
   // Quita cualquier "./", "/", o nada al inicio
   ruta = ruta.replace(/^\.?\/?/, "");
