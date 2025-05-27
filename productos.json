@@ -404,6 +404,15 @@
       "subcategoria": "Equipos Nacionales",
       "categoria": "indumentaria",
       "imagen": "/images/img-whatsapp-image-2025-05-22-at-8.12.58-am-1-.jpeg.png"
+    },
+    {
+      "id": 47,
+      "precio": 70000,
+      "nombre": "Once caldas negra",
+      "stock": 12,
+      "subcategoria": "Equipos nacionales",
+      "categoria": "indumentaria",
+      "imagen": "/images/img-whatsapp-image-2025-05-22-at-8.13.03-am-1-.jpeg.png"
     }
   ]
 }
