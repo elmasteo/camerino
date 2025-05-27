@@ -216,6 +216,15 @@
       "imagen": "/images/img-whatsapp-image-2025-05-19-at-9.03.36-pm-2-.jpeg.png",
       "nombre": "Uniforme loca niño",
       "subcategoria": "Santa fe"
+    },
+    {
+      "id": 25,
+      "imagen": "/images/img-whatsapp-image-2025-05-22-at-8.13.03-am-5-.jpeg.png",
+      "stock": 12,
+      "subcategoria": "Santa fe",
+      "precio": 70000,
+      "nombre": "Camiseta Presentación",
+      "categoria": "indumentaria"
     }
   ]
 }
