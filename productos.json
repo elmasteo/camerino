@@ -440,6 +440,15 @@
       "imagen": "/images/img-whatsapp-image-2025-05-22-at-8.13.08-am-7-.jpeg.png",
       "subcategoria": "Equipos Nacionales",
       "nombre": "Tolima"
+    },
+    {
+      "id": 51,
+      "nombre": "Once caldas colanta",
+      "precio": 70000,
+      "stock": 12,
+      "subcategoria": "Equipos nacionales",
+      "categoria": "indumentaria",
+      "imagen": "/images/img-whatsapp-image-2025-05-22-at-8.13.09-am-1-.jpeg.png"
     }
   ]
 }
