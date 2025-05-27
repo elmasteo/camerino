@@ -207,6 +207,15 @@
       "subcategoria": "Santa fe",
       "categoria": "indumentaria",
       "imagen": "/images/img-whatsapp-image-2025-05-22-at-8.13.03-am-6-.jpeg.png"
+    },
+    {
+      "id": 26,
+      "precio": 70000,
+      "stock": 12,
+      "categoria": "indumentaria",
+      "imagen": "/images/img-whatsapp-image-2025-05-19-at-9.03.36-pm-2-.jpeg.png",
+      "nombre": "Uniforme loca niño",
+      "subcategoria": "Santa fe"
     }
   ]
 }
