@@ -66,7 +66,7 @@
     },
     {
       "id": 9,
-      "nombre": "Camiseta Hombre",
+      "nombre": "Camiseta Hombre - Millonarios",
       "precio": 70000,
       "stock": 12,
       "categoria": "indumentaria",
@@ -75,7 +75,7 @@
     },
     {
       "id": 10,
-      "nombre": "Camiseta Dama",
+      "nombre": "Camiseta Dama - Millonarios",
       "precio": 70000,
       "stock": 12,
       "categoria": "indumentaria",
@@ -84,7 +84,7 @@
     },
     {
       "id": 11,
-      "nombre": "Camiseta niño",
+      "nombre": "Camiseta niño - Millonarios",
       "precio": 70000,
       "stock": 12,
       "categoria": "indumentaria",
@@ -93,7 +93,7 @@
     },
     {
       "id": 12,
-      "nombre": "Camiseta Hombre",
+      "nombre": "Camiseta Hombre - Nacional",
       "precio": 70000,
       "stock": 12,
       "subcategoria": "Nacional",
@@ -102,7 +102,7 @@
     },
     {
       "id": 13,
-      "nombre": "Camiseta Dama",
+      "nombre": "Camiseta Dama - Nacional",
       "precio": 70000,
       "stock": 12,
       "subcategoria": "Nacional",
@@ -111,7 +111,7 @@
     },
     {
       "id": 14,
-      "nombre": "Camiseta Hombre",
+      "nombre": "Camiseta Hombre - Nacional",
       "precio": 70000,
       "stock": 12,
       "subcategoria": "Nacional",
@@ -120,7 +120,7 @@
     },
     {
       "id": 15,
-      "nombre": "Camiseta Hombre",
+      "nombre": "Camiseta Hombre - Nacional",
       "precio": 70000,
       "stock": 12,
       "subcategoria": "Nacional",
@@ -129,7 +129,7 @@
     },
     {
       "id": 16,
-      "nombre": "Camiseta Hombre",
+      "nombre": "Camiseta Hombre - Nacional",
       "precio": 70000,
       "stock": 12,
       "subcategoria": "Nacional",
@@ -138,7 +138,7 @@
     },
     {
       "id": 17,
-      "nombre": "Camiseta Niño",
+      "nombre": "Camiseta Niño - Nacional",
       "precio": 70000,
       "stock": 12,
       "subcategoria": "Nacional",
@@ -147,7 +147,7 @@
     },
     {
       "id": 18,
-      "nombre": "Camiseta Alterna",
+      "nombre": "Camiseta Alterna - Nacional",
       "precio": 70000,
       "stock": 12,
       "subcategoria": "Nacional",
@@ -156,7 +156,7 @@
     },
     {
       "id": 19,
-      "nombre": "Visitante",
+      "nombre": "Visitante - Santa fe",
       "precio": 70000,
       "stock": 12,
       "subcategoria": "Santa fe",
@@ -165,7 +165,7 @@
     },
     {
       "id": 20,
-      "nombre": "Local ",
+      "nombre": "Local - Santa fe",
       "precio": 70000,
       "stock": 12,
       "subcategoria": "Santa fe",
@@ -174,7 +174,7 @@
     },
     {
       "id": 21,
-      "nombre": "Local Niño",
+      "nombre": "Local Niño - Santa fe",
       "precio": 70000,
       "stock": 10,
       "categoria": "indumentaria",
@@ -183,7 +183,7 @@
     },
     {
       "id": 22,
-      "nombre": "Local Dama",
+      "nombre": "Local Dama - Santa fe",
       "precio": 70000,
       "stock": 12,
       "subcategoria": "Santa fe",
@@ -192,7 +192,7 @@
     },
     {
       "id": 23,
-      "nombre": "Visitante Dama",
+      "nombre": "Visitante Dama - Santa fe",
       "precio": 70000,
       "stock": 10,
       "subcategoria": "Santa fe",
@@ -201,7 +201,7 @@
     },
     {
       "id": 24,
-      "nombre": "Camiseta Retro",
+      "nombre": "Camiseta Retro - Santa fe",
       "precio": 70000,
       "stock": 12,
       "subcategoria": "Santa fe",
@@ -214,7 +214,7 @@
       "stock": 12,
       "categoria": "indumentaria",
       "imagen": "/images/img-whatsapp-image-2025-05-19-at-9.03.36-pm-2-.jpeg.png",
-      "nombre": "Uniforme loca niño",
+      "nombre": "Uniforme local niño - Santa fe",
       "subcategoria": "Santa fe"
     },
     {
@@ -223,7 +223,7 @@
       "stock": 12,
       "subcategoria": "Santa fe",
       "precio": 70000,
-      "nombre": "Camiseta Presentación",
+      "nombre": "Camiseta Presentación - Santa fe",
       "categoria": "indumentaria"
     },
     {
@@ -249,7 +249,7 @@
       "stock": 12,
       "categoria": "indumentaria",
       "imagen": "/images/img-whatsapp-image-2025-05-22-at-8.12.56-am.jpeg.png",
-      "nombre": "Uniforme local niño",
+      "nombre": "Uniforme local niño - Nacional",
       "precio": 70000,
       "subcategoria": "Nacional"
     },
@@ -260,7 +260,7 @@
       "subcategoria": "Nacional",
       "stock": 12,
       "precio": 70000,
-      "nombre": "Camiseta presentación azul"
+      "nombre": "Camiseta presentación azul - Nacional"
     },
     {
       "imagen": "/images/img-whatsapp-image-2025-05-22-at-8.13.01-am-4-.jpeg.png",
@@ -283,7 +283,7 @@
     {
       "id": 33,
       "imagen": "/images/img-whatsapp-image-2025-05-22-at-8.13.02-am.jpeg.png",
-      "nombre": "Retro Postobón",
+      "nombre": "Retro Postobón - Nacional",
       "precio": 70000,
       "stock": 12,
       "subcategoria": "Nacional",
@@ -296,7 +296,7 @@
       "subcategoria": "Nacional",
       "stock": 12,
       "precio": 70000,
-      "nombre": "Retro puma"
+      "nombre": "Retro puma - Nacional"
     },
     {
       "id": 35,
@@ -305,7 +305,7 @@
       "subcategoria": "Millonarios",
       "categoria": "indumentaria",
       "imagen": "/images/img-whatsapp-image-2025-05-22-at-8.12.57-am-3-.jpeg.png",
-      "nombre": "Uniforme local niño"
+      "nombre": "Uniforme local niño - Millonarios"
     },
     {
       "id": 36,
@@ -314,7 +314,7 @@
       "subcategoria": "Millonarios",
       "categoria": "indumentaria",
       "imagen": "/images/img-whatsapp-image-2025-05-22-at-8.13.06-am.jpeg.png",
-      "nombre": "Camiseta polo presentación"
+      "nombre": "Camiseta polo presentación - Millonarios"
     },
     {
       "imagen": "/images/img-whatsapp-image-2025-05-19-at-9.03.35-pm-1-.jpeg.png",
@@ -322,7 +322,7 @@
       "nombre": "Liverpool",
       "precio": 70000,
       "stock": 12,
-      "subcategoria": "Internacionales niño",
+      "subcategoria": "Internacionales",
       "categoria": "indumentaria"
     },
     {
@@ -330,7 +330,7 @@
       "nombre": "Argentina",
       "precio": 70000,
       "stock": 12,
-      "subcategoria": "Internacionales niño",
+      "subcategoria": "Internacionales",
       "categoria": "indumentaria",
       "imagen": "/images/img-whatsapp-image-2025-05-19-at-9.03.35-pm-5-.jpeg.png"
     },
@@ -338,7 +338,7 @@
       "id": 39,
       "precio": 70000,
       "stock": 12,
-      "subcategoria": "Internacionales niño",
+      "subcategoria": "Internacionales",
       "categoria": "indumentaria",
       "imagen": "/images/img-whatsapp-image-2025-05-19-at-9.03.35-pm-2-.jpeg.png",
       "nombre": "Manchester city"
@@ -347,7 +347,7 @@
       "id": 40,
       "precio": 70000,
       "stock": 12,
-      "subcategoria": "Internacionales niño",
+      "subcategoria": "Internacionales",
       "categoria": "indumentaria",
       "imagen": "/images/img-whatsapp-image-2025-05-19-at-9.03.35-pm-6-.jpeg.png",
       "nombre": "Barcelona"
@@ -357,7 +357,7 @@
       "nombre": "Real madrid",
       "precio": 70000,
       "stock": 12,
-      "subcategoria": "Internacionales niño",
+      "subcategoria": "Internacionales",
       "categoria": "indumentaria",
       "imagen": "/images/img-whatsapp-image-2025-05-19-at-9.03.35-pm-7-.jpeg.png"
     },
@@ -375,7 +375,7 @@
       "stock": 12,
       "categoria": "indumentaria",
       "imagen": "/images/img-whatsapp-image-2025-05-22-at-8.13.05-am-5-.jpeg.png",
-      "subcategoria": "Internacionales niño",
+      "subcategoria": "Internacionales",
       "nombre": "Santos"
     },
     {
@@ -455,7 +455,7 @@
       "precio": 70000,
       "stock": 12,
       "categoria": "indumentaria",
-      "subcategoria": "Internacionales hombre",
+      "subcategoria": "Internacionales",
       "imagen": "/images/img-whatsapp-image-2025-05-19-at-9.03.35-pm-10-.jpeg.png",
       "nombre": "Barcelona"
     },
@@ -464,7 +464,7 @@
       "precio": 70000,
       "stock": 12,
       "categoria": "indumentaria",
-      "subcategoria": "Internacionales hombre",
+      "subcategoria": "Internacionales",
       "imagen": "/images/img-whatsapp-image-2025-05-22-at-8.13.00-am-1-.jpeg.png",
       "nombre": "Santos"
     },
@@ -472,7 +472,7 @@
       "id": 54,
       "precio": 70000,
       "stock": 12,
-      "subcategoria": "Internacionales hombre",
+      "subcategoria": "Internacionales",
       "categoria": "indumentaria",
       "imagen": "/images/img-whatsapp-image-2025-05-22-at-8.13.09-am-2-.jpeg.png",
       "nombre": "Palmeiras"
@@ -482,7 +482,7 @@
       "precio": 70000,
       "stock": 12,
       "categoria": "indumentaria",
-      "subcategoria": "Internacionales hombre",
+      "subcategoria": "Internacionales",
       "imagen": "/images/img-whatsapp-image-2025-05-22-at-8.13.04-am-5-.jpeg.png",
       "nombre": "Real madrid emirates"
     },
@@ -490,7 +490,7 @@
       "id": 56,
       "precio": 70000,
       "stock": 12,
-      "subcategoria": "Internacionales hombre",
+      "subcategoria": "Internacionales",
       "categoria": "indumentaria",
       "imagen": "/images/img-whatsapp-image-2025-05-22-at-8.13.04-am-6-.jpeg.png",
       "nombre": "Barcelona 2"
