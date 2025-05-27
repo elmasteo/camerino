@@ -395,6 +395,15 @@
       "imagen": "/images/img-whatsapp-image-2025-05-22-at-8.12.58-am-2-.jpeg.png",
       "subcategoria": "Equipos nacionales",
       "nombre": "Junior hombre"
+    },
+    {
+      "id": 47,
+      "nombre": "Junior dama",
+      "precio": 70000,
+      "stock": 12,
+      "subcategoria": "Equipos Nacionales",
+      "categoria": "indumentaria",
+      "imagen": "/images/img-whatsapp-image-2025-05-22-at-8.12.58-am-1-.jpeg.png"
     }
   ]
 }
