@@ -156,12 +156,21 @@
     },
     {
       "id": 20,
-      "nombre": "LOCAL",
+      "nombre": "Visitante",
       "precio": 70000,
       "stock": 12,
       "subcategoria": "Camisetas Santa fe",
       "categoria": "indumentaria",
       "imagen": "/images/img-whatsapp-image-2025-05-22-at-8.12.59-am-5-.jpeg.png"
+    },
+    {
+      "id": 21,
+      "nombre": "Local ",
+      "precio": 70000,
+      "stock": 12,
+      "subcategoria": "Camiseta Santa fe",
+      "categoria": "indumentaria",
+      "imagen": "/images/img-whatsapp-image-2025-05-22-at-8.13.06-am-2-.jpeg.png"
     }
   ]
 }
