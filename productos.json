@@ -333,6 +333,15 @@
       "subcategoria": "Internacionales niño",
       "categoria": "indumentaria",
       "imagen": "/images/img-whatsapp-image-2025-05-19-at-9.03.35-pm-5-.jpeg.png"
+    },
+    {
+      "id": 40,
+      "precio": 70000,
+      "stock": 12,
+      "subcategoria": "Internacionales niño",
+      "categoria": "indumentaria",
+      "imagen": "/images/img-whatsapp-image-2025-05-19-at-9.03.35-pm-2-.jpeg.png",
+      "nombre": "Manchester city"
     }
   ]
 }
