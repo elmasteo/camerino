@@ -501,8 +501,15 @@ document.addEventListener('click', function (event) {
 function abrirModalImagen(src) {
   const modal = document.getElementById("modal-imagen");
   const imagen = document.getElementById("imagen-modal");
-  imagen.src = src;
-  modal.style.display = "flex";
+
+  const cdnUrl = `https://imagecdn.app/v2/image/${encodeURIComponent(src)}?w=400&auto=webp`;
+
+  const preload = new Image();
+  preload.onload = () => {
+    imagen.src = cdnUrl;
+    modal.style.display = "flex";
+  };
+  preload.src = cdnUrl;
 }
 
 function contraerTodosLosSubmenus() {
