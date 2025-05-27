@@ -351,6 +351,15 @@
       "categoria": "indumentaria",
       "imagen": "/images/img-whatsapp-image-2025-05-19-at-9.03.35-pm-6-.jpeg.png",
       "nombre": "Barcelona"
+    },
+    {
+      "id": 42,
+      "nombre": "Real madrid",
+      "precio": 70000,
+      "stock": 12,
+      "subcategoria": "Internacionales niño",
+      "categoria": "indumentaria",
+      "imagen": "/images/img-whatsapp-image-2025-05-19-at-9.03.35-pm-7-.jpeg.png"
     }
   ]
 }
