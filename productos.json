@@ -315,6 +315,15 @@
       "categoria": "indumentaria",
       "imagen": "/images/img-whatsapp-image-2025-05-22-at-8.13.06-am.jpeg.png",
       "nombre": "Camiseta polo presentación"
+    },
+    {
+      "imagen": "/images/img-whatsapp-image-2025-05-19-at-9.03.35-pm-1-.jpeg.png",
+      "id": 38,
+      "nombre": "Internacionales niño",
+      "precio": 70000,
+      "stock": 12,
+      "subcategoria": "Internacionales niño",
+      "categoria": "indumentaria"
     }
   ]
 }
