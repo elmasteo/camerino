@@ -65,7 +65,7 @@
       "stock": 1
     },
     {
-      "id": 10,
+      "id": 9,
       "nombre": "Camiseta Hombre",
       "precio": 70000,
       "stock": 12,
@@ -74,7 +74,7 @@
       "subcategoria": "Millonarios"
     },
     {
-      "id": 11,
+      "id": 10,
       "nombre": "Camiseta Dama",
       "precio": 70000,
       "stock": 12,
@@ -83,7 +83,7 @@
       "subcategoria": "Millonarios"
     },
     {
-      "id": 12,
+      "id": 11,
       "nombre": "Camiseta niño",
       "precio": 70000,
       "stock": 12,
@@ -92,7 +92,7 @@
       "subcategoria": "Millonarios"
     },
     {
-      "id": 13,
+      "id": 12,
       "nombre": "Camiseta Hombre",
       "precio": 70000,
       "stock": 12,
@@ -101,7 +101,7 @@
       "imagen": "/images/whatsapp-image-2025-05-19-at-11.13.24-am-4-.jpeg"
     },
     {
-      "id": 14,
+      "id": 13,
       "nombre": "Camiseta Dama",
       "precio": 70000,
       "stock": 12,
@@ -110,7 +110,7 @@
       "imagen": "/images/whatsapp-image-2025-05-19-at-11.13.25-am-3-.jpeg"
     },
     {
-      "id": 15,
+      "id": 14,
       "nombre": "Camiseta Hombre",
       "precio": 70000,
       "stock": 12,
@@ -119,7 +119,7 @@
       "imagen": "/images/whatsapp-image-2025-05-19-at-11.13.25-am-6-.jpeg"
     },
     {
-      "id": 16,
+      "id": 15,
       "nombre": "Camiseta Hombre",
       "precio": 70000,
       "stock": 12,
@@ -128,7 +128,7 @@
       "imagen": "/images/whatsapp-image-2025-05-19-at-11.13.25-am-4-.jpeg"
     },
     {
-      "id": 17,
+      "id": 16,
       "nombre": "Camiseta Hombre",
       "precio": 70000,
       "stock": 12,
@@ -137,7 +137,7 @@
       "imagen": "/images/whatsapp-image-2025-05-19-at-11.13.25-am-7-.jpeg"
     },
     {
-      "id": 18,
+      "id": 17,
       "nombre": "Camiseta Niño",
       "precio": 70000,
       "stock": 12,
@@ -146,7 +146,7 @@
       "imagen": "/images/whatsapp-image-2025-05-19-at-11.13.24-am-2-.jpeg"
     },
     {
-      "id": 19,
+      "id": 18,
       "nombre": "Camiseta Alterna",
       "precio": 70000,
       "stock": 12,
@@ -155,7 +155,7 @@
       "imagen": "/images/whatsapp-image-2025-05-19-at-11.13.24-am-3-.jpeg"
     },
     {
-      "id": 20,
+      "id": 19,
       "nombre": "Visitante",
       "precio": 70000,
       "stock": 12,
@@ -164,7 +164,7 @@
       "imagen": "/images/img-whatsapp-image-2025-05-22-at-8.12.59-am-5-.jpeg.png"
     },
     {
-      "id": 21,
+      "id": 20,
       "nombre": "Local ",
       "precio": 70000,
       "stock": 12,
@@ -173,7 +173,7 @@
       "imagen": "/images/img-whatsapp-image-2025-05-22-at-8.13.06-am-2-.jpeg.png"
     },
     {
-      "id": 22,
+      "id": 21,
       "nombre": "Local Niño",
       "precio": 70000,
       "stock": 10,
@@ -182,7 +182,7 @@
       "imagen": "/images/img-whatsapp-image-2025-05-19-at-9.03.36-pm-2-.jpeg.png"
     },
     {
-      "id": 23,
+      "id": 22,
       "nombre": "Local Dama",
       "precio": 70000,
       "stock": 12,
@@ -191,7 +191,7 @@
       "imagen": "/images/img-whatsapp-image-2025-05-19-at-9.03.36-pm-1-.jpeg.png"
     },
     {
-      "id": 24,
+      "id": 23,
       "nombre": "Visitante Dama",
       "precio": 70000,
       "stock": 10,
@@ -200,7 +200,7 @@
       "imagen": "/images/img-whatsapp-image-2025-05-22-at-8.13.03-am-7-.jpeg.png"
     },
     {
-      "id": 25,
+      "id": 24,
       "nombre": "Camiseta Retro",
       "precio": 70000,
       "stock": 12,
@@ -209,7 +209,7 @@
       "imagen": "/images/img-whatsapp-image-2025-05-22-at-8.13.03-am-6-.jpeg.png"
     },
     {
-      "id": 26,
+      "id": 25,
       "precio": 70000,
       "stock": 12,
       "categoria": "indumentaria",
@@ -218,7 +218,7 @@
       "subcategoria": "Santa fe"
     },
     {
-      "id": 27,
+      "id": 26,
       "imagen": "/images/img-whatsapp-image-2025-05-22-at-8.13.03-am-5-.jpeg.png",
       "stock": 12,
       "subcategoria": "Santa fe",
@@ -227,7 +227,7 @@
       "categoria": "indumentaria"
     },
     {
-      "id": 28,
+      "id": 27,
       "stock": 12,
       "categoria": "indumentaria",
       "imagen": "/images/img-whatsapp-image-2025-05-22-at-8.13.00-am-3-.jpeg.png",
@@ -236,7 +236,7 @@
       "nombre": "Sam blanca"
     },
     {
-      "id": 29,
+      "id": 28,
       "nombre": "Sam verde",
       "precio": 70000,
       "stock": 12,
@@ -245,7 +245,7 @@
       "imagen": "/images/img-whatsapp-image-2025-05-22-at-8.13.01-am.jpeg.png"
     },
     {
-      "id": 30,
+      "id": 29,
       "stock": 12,
       "categoria": "indumentaria",
       "imagen": "/images/img-whatsapp-image-2025-05-22-at-8.12.56-am.jpeg.png",
@@ -254,7 +254,7 @@
       "subcategoria": "Nacional"
     },
     {
-      "id": 31,
+      "id": 30,
       "imagen": "/images/img-whatsapp-image-2025-05-22-at-8.12.57-am.jpeg.png",
       "categoria": "indumentaria",
       "subcategoria": "Nacional",
@@ -269,10 +269,10 @@
       "stock": 12,
       "precio": 70000,
       "nombre": "Camiseta presentación Postobón",
-      "id": 32
+      "id": 31
     },
     {
-      "id": 33,
+      "id": 32,
       "stock": 12,
       "categoria": "indumentaria",
       "subcategoria": "Nacional",
@@ -281,7 +281,7 @@
       "nombre": "Leona negra"
     },
     {
-      "id": 34,
+      "id": 33,
       "imagen": "/images/img-whatsapp-image-2025-05-22-at-8.13.02-am.jpeg.png",
       "nombre": "Retro Postobón",
       "precio": 70000,
@@ -290,7 +290,7 @@
       "categoria": "indumentaria"
     },
     {
-      "id": 35,
+      "id": 34,
       "imagen": "/images/img-whatsapp-image-2025-05-22-at-8.13.01-am-5-.jpeg.png",
       "categoria": "indumentaria",
       "subcategoria": "Nacional",
@@ -299,7 +299,7 @@
       "nombre": "Retro puma"
     },
     {
-      "id": 36,
+      "id": 35,
       "precio": 70000,
       "stock": 12,
       "subcategoria": "Millonarios",
@@ -308,7 +308,7 @@
       "nombre": "Uniforme local niño"
     },
     {
-      "id": 37,
+      "id": 36,
       "precio": 70000,
       "stock": 12,
       "subcategoria": "Millonarios",
@@ -318,7 +318,7 @@
     },
     {
       "imagen": "/images/img-whatsapp-image-2025-05-19-at-9.03.35-pm-1-.jpeg.png",
-      "id": 38,
+      "id": 37,
       "nombre": "Liverpool",
       "precio": 70000,
       "stock": 12,
@@ -326,7 +326,7 @@
       "categoria": "indumentaria"
     },
     {
-      "id": 39,
+      "id": 38,
       "nombre": "Argentina",
       "precio": 70000,
       "stock": 12,
@@ -335,7 +335,7 @@
       "imagen": "/images/img-whatsapp-image-2025-05-19-at-9.03.35-pm-5-.jpeg.png"
     },
     {
-      "id": 40,
+      "id": 39,
       "precio": 70000,
       "stock": 12,
       "subcategoria": "Internacionales niño",
@@ -344,7 +344,7 @@
       "nombre": "Manchester city"
     },
     {
-      "id": 41,
+      "id": 40,
       "precio": 70000,
       "stock": 12,
       "subcategoria": "Internacionales niño",
@@ -353,7 +353,7 @@
       "nombre": "Barcelona"
     },
     {
-      "id": 42,
+      "id": 41,
       "nombre": "Real madrid",
       "precio": 70000,
       "stock": 12,
@@ -362,7 +362,7 @@
       "imagen": "/images/img-whatsapp-image-2025-05-19-at-9.03.35-pm-7-.jpeg.png"
     },
     {
-      "id": 43,
+      "id": 42,
       "precio": 70000,
       "stock": 12,
       "categoria": "indumentaria",
@@ -370,7 +370,7 @@
       "nombre": "Barcelona 2"
     },
     {
-      "id": 44,
+      "id": 43,
       "precio": 70000,
       "stock": 12,
       "categoria": "indumentaria",
@@ -385,10 +385,10 @@
       "stock": 12,
       "precio": 70000,
       "nombre": "Pereira",
-      "id": 45
+      "id": 44
     },
     {
-      "id": 46,
+      "id": 45,
       "precio": 70000,
       "stock": 12,
       "categoria": "indumentaria",
@@ -397,7 +397,7 @@
       "nombre": "Junior hombre"
     },
     {
-      "id": 47,
+      "id": 46,
       "nombre": "Junior dama",
       "precio": 70000,
       "stock": 12,
