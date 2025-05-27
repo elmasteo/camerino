@@ -422,6 +422,15 @@
       "subcategoria": "Equipos nacionales",
       "categoria": "indumentaria",
       "imagen": "/images/img-whatsapp-image-2025-05-22-at-8.13.03-am-2-.jpeg.png"
+    },
+    {
+      "id": 47,
+      "imagen": "/images/img-whatsapp-image-2025-05-22-at-8.13.03-am-3-.jpeg.png",
+      "categoria": "indumentaria",
+      "subcategoria": "Equipos nacionales",
+      "stock": 12,
+      "precio": 70000,
+      "nombre": "Bucaramanga"
     }
   ]
 }
