@@ -467,6 +467,15 @@
       "subcategoria": "Internacionales hombre",
       "imagen": "/images/img-whatsapp-image-2025-05-22-at-8.13.00-am-1-.jpeg.png",
       "nombre": "Santos"
+    },
+    {
+      "id": 54,
+      "precio": 70000,
+      "stock": 12,
+      "subcategoria": "Internacionales hombre",
+      "categoria": "indumentaria",
+      "imagen": "/images/img-whatsapp-image-2025-05-22-at-8.13.09-am-2-.jpeg.png",
+      "nombre": "Palmeiras"
     }
   ]
 }
