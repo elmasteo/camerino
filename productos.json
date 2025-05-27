@@ -512,6 +512,15 @@
       "subcategoria": "Equipos nacionales",
       "categoria": "indumentaria",
       "imagen": "/images/img-whatsapp-image-2025-05-22-at-8.13.04-am-4-.jpeg.png"
+    },
+    {
+      "id": 59,
+      "precio": 70000,
+      "stock": 12,
+      "categoria": "indumentaria",
+      "imagen": "/images/img-whatsapp-image-2025-05-22-at-8.13.06-am-5-.jpeg.png",
+      "subcategoria": "Colombia",
+      "nombre": "100 años dama"
     }
   ]
 }
