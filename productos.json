@@ -189,6 +189,24 @@
       "subcategoria": "Camiseta Dama",
       "categoria": "indumentaria",
       "imagen": "/images/img-whatsapp-image-2025-05-19-at-9.03.36-pm-1-.jpeg.png"
+    },
+    {
+      "id": 24,
+      "nombre": "Visitante Dama",
+      "precio": 70000,
+      "stock": 10,
+      "subcategoria": "Camiseta Local",
+      "categoria": "indumentaria",
+      "imagen": "/images/img-whatsapp-image-2025-05-22-at-8.13.03-am-7-.jpeg.png"
+    },
+    {
+      "id": 25,
+      "nombre": "Camiseta Retro",
+      "precio": 70000,
+      "stock": 12,
+      "subcategoria": "Camiseta Retro Santa Fe",
+      "categoria": "indumentaria",
+      "imagen": "/images/img-whatsapp-image-2025-05-22-at-8.13.03-am-6-.jpeg.png"
     }
   ]
 }
