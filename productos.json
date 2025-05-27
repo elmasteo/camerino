@@ -288,6 +288,15 @@
       "stock": 12,
       "subcategoria": "Nacional",
       "categoria": "indumentaria"
+    },
+    {
+      "id": 35,
+      "imagen": "/images/img-whatsapp-image-2025-05-22-at-8.13.01-am-5-.jpeg.png",
+      "categoria": "indumentaria",
+      "subcategoria": "Nacional",
+      "stock": 12,
+      "precio": 70000,
+      "nombre": "Retro puma"
     }
   ]
 }
