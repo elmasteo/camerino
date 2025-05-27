@@ -171,6 +171,15 @@
       "subcategoria": "Camiseta Santa fe",
       "categoria": "indumentaria",
       "imagen": "/images/img-whatsapp-image-2025-05-22-at-8.13.06-am-2-.jpeg.png"
+    },
+    {
+      "id": 22,
+      "nombre": "Local Niño",
+      "precio": 70000,
+      "stock": 10,
+      "categoria": "indumentaria",
+      "subcategoria": "Camiseta Santa Fe",
+      "imagen": "/images/img-whatsapp-image-2025-05-19-at-9.03.36-pm-2-.jpeg.png"
     }
   ]
 }
