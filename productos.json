@@ -485,6 +485,15 @@
       "subcategoria": "Internacionales hombre",
       "imagen": "/images/img-whatsapp-image-2025-05-22-at-8.13.04-am-5-.jpeg.png",
       "nombre": "Real madrid emirates"
+    },
+    {
+      "id": 56,
+      "precio": 70000,
+      "stock": 12,
+      "subcategoria": "Internacionales hombre",
+      "categoria": "indumentaria",
+      "imagen": "/images/img-whatsapp-image-2025-05-22-at-8.13.04-am-6-.jpeg.png",
+      "nombre": "Barcelona 2"
     }
   ]
 }
