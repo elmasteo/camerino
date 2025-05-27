@@ -401,7 +401,7 @@
       "nombre": "Junior dama",
       "precio": 70000,
       "stock": 12,
-      "subcategoria": "Equipos Nacionales",
+      "subcategoria": "Equipos nacionales",
       "categoria": "indumentaria",
       "imagen": "/images/img-whatsapp-image-2025-05-22-at-8.12.58-am-1-.jpeg.png"
     },
@@ -438,8 +438,107 @@
       "stock": 10,
       "categoria": "indumentaria",
       "imagen": "/images/img-whatsapp-image-2025-05-22-at-8.13.08-am-7-.jpeg.png",
-      "subcategoria": "Equipos Nacionales",
+      "subcategoria": "Equipos nacionales",
       "nombre": "Tolima"
+    },
+    {
+      "id": 51,
+      "nombre": "Once caldas colanta",
+      "precio": 70000,
+      "stock": 12,
+      "subcategoria": "Equipos nacionales",
+      "categoria": "indumentaria",
+      "imagen": "/images/img-whatsapp-image-2025-05-22-at-8.13.09-am-1-.jpeg.png"
+    },
+    {
+      "id": 52,
+      "precio": 70000,
+      "stock": 12,
+      "categoria": "indumentaria",
+      "subcategoria": "Internacionales hombre",
+      "imagen": "/images/img-whatsapp-image-2025-05-19-at-9.03.35-pm-10-.jpeg.png",
+      "nombre": "Barcelona"
+    },
+    {
+      "id": 53,
+      "precio": 70000,
+      "stock": 12,
+      "categoria": "indumentaria",
+      "subcategoria": "Internacionales hombre",
+      "imagen": "/images/img-whatsapp-image-2025-05-22-at-8.13.00-am-1-.jpeg.png",
+      "nombre": "Santos"
+    },
+    {
+      "id": 54,
+      "precio": 70000,
+      "stock": 12,
+      "subcategoria": "Internacionales hombre",
+      "categoria": "indumentaria",
+      "imagen": "/images/img-whatsapp-image-2025-05-22-at-8.13.09-am-2-.jpeg.png",
+      "nombre": "Palmeiras"
+    },
+    {
+      "id": 55,
+      "precio": 70000,
+      "stock": 12,
+      "categoria": "indumentaria",
+      "subcategoria": "Internacionales hombre",
+      "imagen": "/images/img-whatsapp-image-2025-05-22-at-8.13.04-am-5-.jpeg.png",
+      "nombre": "Real madrid emirates"
+    },
+    {
+      "id": 56,
+      "precio": 70000,
+      "stock": 12,
+      "subcategoria": "Internacionales hombre",
+      "categoria": "indumentaria",
+      "imagen": "/images/img-whatsapp-image-2025-05-22-at-8.13.04-am-6-.jpeg.png",
+      "nombre": "Barcelona 2"
+    },
+    {
+      "id": 57,
+      "precio": 70000,
+      "stock": 12,
+      "categoria": "indumentaria",
+      "imagen": "/images/img-whatsapp-image-2025-05-22-at-8.13.00-am.jpeg.png",
+      "nombre": "America blanca",
+      "subcategoria": "Equipos nacionales"
+    },
+    {
+      "id": 58,
+      "nombre": "America local",
+      "precio": 70000,
+      "stock": 12,
+      "subcategoria": "Equipos nacionales",
+      "categoria": "indumentaria",
+      "imagen": "/images/img-whatsapp-image-2025-05-22-at-8.13.04-am-4-.jpeg.png"
+    },
+    {
+      "id": 59,
+      "precio": 70000,
+      "stock": 12,
+      "categoria": "indumentaria",
+      "imagen": "/images/img-whatsapp-image-2025-05-22-at-8.13.06-am-5-.jpeg.png",
+      "subcategoria": "Colombia",
+      "nombre": "100 años dama"
+    },
+    {
+      "id": 60,
+      "nombre": "100 años hombre",
+      "precio": 70000,
+      "stock": 12,
+      "subcategoria": "Colombia",
+      "categoria": "indumentaria",
+      "imagen": "/images/img-whatsapp-image-2025-05-22-at-8.13.06-am-6-.jpeg.png"
+    },
+    {
+      "id": 59,
+      "nombre": "100 años niño",
+      "precio": 70000,
+      "stock": 12,
+      "subcategoria": "Colombia",
+      "categoria": "indumentaria",
+      "imagen": "/images/whatsapp-image-2025-05-19-at-11.13.25-am-1-.jpeg"
     }
   ]
 }
