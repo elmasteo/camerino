@@ -503,6 +503,15 @@
       "imagen": "/images/img-whatsapp-image-2025-05-22-at-8.13.00-am.jpeg.png",
       "nombre": "America blanca",
       "subcategoria": "Equipos nacionales"
+    },
+    {
+      "id": 58,
+      "nombre": "America local",
+      "precio": 70000,
+      "stock": 12,
+      "subcategoria": "Equipos nacionales",
+      "categoria": "indumentaria",
+      "imagen": "/images/img-whatsapp-image-2025-05-22-at-8.13.04-am-4-.jpeg.png"
     }
   ]
 }
