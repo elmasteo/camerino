@@ -476,6 +476,15 @@
       "categoria": "indumentaria",
       "imagen": "/images/img-whatsapp-image-2025-05-22-at-8.13.09-am-2-.jpeg.png",
       "nombre": "Palmeiras"
+    },
+    {
+      "id": 55,
+      "precio": 70000,
+      "stock": 12,
+      "categoria": "indumentaria",
+      "subcategoria": "Internacionales hombre",
+      "imagen": "/images/img-whatsapp-image-2025-05-22-at-8.13.04-am-5-.jpeg.png",
+      "nombre": "Real madrid"
     }
   ]
 }
