@@ -297,6 +297,15 @@
       "stock": 12,
       "precio": 70000,
       "nombre": "Retro puma"
+    },
+    {
+      "id": 36,
+      "precio": 70000,
+      "stock": 12,
+      "subcategoria": "Millonarios",
+      "categoria": "indumentaria",
+      "imagen": "/images/img-whatsapp-image-2025-05-22-at-8.12.57-am-3-.jpeg.png",
+      "nombre": "Uniforme local niño"
     }
   ]
 }
