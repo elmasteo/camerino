@@ -458,6 +458,15 @@
       "subcategoria": "Internacionales hombre",
       "imagen": "/images/img-whatsapp-image-2025-05-19-at-9.03.35-pm-10-.jpeg.png",
       "nombre": "Barcelona"
+    },
+    {
+      "id": 53,
+      "precio": 70000,
+      "stock": 12,
+      "categoria": "indumentaria",
+      "subcategoria": "Internacionales hombre",
+      "imagen": "/images/img-whatsapp-image-2025-05-22-at-8.13.00-am-1-.jpeg.png",
+      "nombre": "Santos"
     }
   ]
 }
