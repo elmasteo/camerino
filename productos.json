@@ -306,6 +306,15 @@
       "categoria": "indumentaria",
       "imagen": "/images/img-whatsapp-image-2025-05-22-at-8.12.57-am-3-.jpeg.png",
       "nombre": "Uniforme local niño"
+    },
+    {
+      "id": 37,
+      "precio": 70000,
+      "stock": 12,
+      "subcategoria": "Millonarios",
+      "categoria": "indumentaria",
+      "imagen": "/images/img-whatsapp-image-2025-05-22-at-8.13.06-am.jpeg.png",
+      "nombre": "Camiseta polo presentación"
     }
   ]
 }
