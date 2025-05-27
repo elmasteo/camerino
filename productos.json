@@ -377,6 +377,15 @@
       "imagen": "/images/img-whatsapp-image-2025-05-22-at-8.13.05-am-5-.jpeg.png",
       "subcategoria": "Internacionales niño",
       "nombre": "Santos"
+    },
+    {
+      "imagen": "/images/img-whatsapp-image-2025-05-19-at-9.03.35-pm-9-.jpeg.png",
+      "categoria": "indumentaria",
+      "subcategoria": "Equipos nacionales",
+      "stock": 12,
+      "precio": 70000,
+      "nombre": "Pereira",
+      "id": 45
     }
   ]
 }
