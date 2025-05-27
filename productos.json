@@ -279,6 +279,15 @@
       "imagen": "/images/img-whatsapp-image-2025-05-22-at-8.13.01-am-2-.jpeg.png",
       "precio": 70000,
       "nombre": "Leona negra"
+    },
+    {
+      "id": 34,
+      "imagen": "/images/img-whatsapp-image-2025-05-22-at-8.13.02-am.jpeg.png",
+      "nombre": "Retro Postobón",
+      "precio": 70000,
+      "stock": 12,
+      "subcategoria": "Nacional",
+      "categoria": "indumentaria"
     }
   ]
 }
