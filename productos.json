@@ -153,6 +153,15 @@
       "subcategoria": "Nacional",
       "categoria": "indumentaria",
       "imagen": "/images/whatsapp-image-2025-05-19-at-11.13.24-am-3-.jpeg"
+    },
+    {
+      "id": 20,
+      "nombre": "LOCAL",
+      "precio": 70000,
+      "stock": 12,
+      "subcategoria": "Camisetas Santa fe",
+      "categoria": "indumentaria",
+      "imagen": "/images/img-whatsapp-image-2025-05-22-at-8.12.59-am-5-.jpeg.png"
     }
   ]
 }
