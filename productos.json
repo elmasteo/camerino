@@ -159,7 +159,7 @@
       "nombre": "Visitante",
       "precio": 70000,
       "stock": 12,
-      "subcategoria": "Camisetas Santa fe",
+      "subcategoria": "Santa fe",
       "categoria": "indumentaria",
       "imagen": "/images/img-whatsapp-image-2025-05-22-at-8.12.59-am-5-.jpeg.png"
     },
@@ -168,7 +168,7 @@
       "nombre": "Local ",
       "precio": 70000,
       "stock": 12,
-      "subcategoria": "Camiseta Santa fe",
+      "subcategoria": " Santa Fe",
       "categoria": "indumentaria",
       "imagen": "/images/img-whatsapp-image-2025-05-22-at-8.13.06-am-2-.jpeg.png"
     },
@@ -178,7 +178,7 @@
       "precio": 70000,
       "stock": 10,
       "categoria": "indumentaria",
-      "subcategoria": "Camiseta Santa Fe",
+      "subcategoria": "Santa Fe",
       "imagen": "/images/img-whatsapp-image-2025-05-19-at-9.03.36-pm-2-.jpeg.png"
     },
     {
@@ -186,7 +186,7 @@
       "nombre": "Local Dama",
       "precio": 70000,
       "stock": 12,
-      "subcategoria": "Camiseta Dama",
+      "subcategoria": "Santa Fe",
       "categoria": "indumentaria",
       "imagen": "/images/img-whatsapp-image-2025-05-19-at-9.03.36-pm-1-.jpeg.png"
     },
@@ -195,7 +195,7 @@
       "nombre": "Visitante Dama",
       "precio": 70000,
       "stock": 10,
-      "subcategoria": "Camiseta Local",
+      "subcategoria": "Santa Fe",
       "categoria": "indumentaria",
       "imagen": "/images/img-whatsapp-image-2025-05-22-at-8.13.03-am-7-.jpeg.png"
     },
