@@ -360,6 +360,14 @@
       "subcategoria": "Internacionales niño",
       "categoria": "indumentaria",
       "imagen": "/images/img-whatsapp-image-2025-05-19-at-9.03.35-pm-7-.jpeg.png"
+    },
+    {
+      "id": 43,
+      "precio": 70000,
+      "stock": 12,
+      "categoria": "indumentaria",
+      "imagen": "/images/img-whatsapp-image-2025-05-19-at-9.03.36-pm.jpeg.png",
+      "nombre": "Barcelona 2"
     }
   ]
 }
