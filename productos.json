@@ -319,11 +319,20 @@
     {
       "imagen": "/images/img-whatsapp-image-2025-05-19-at-9.03.35-pm-1-.jpeg.png",
       "id": 38,
-      "nombre": "Internacionales niño",
+      "nombre": "Liverpool",
       "precio": 70000,
       "stock": 12,
       "subcategoria": "Internacionales niño",
       "categoria": "indumentaria"
+    },
+    {
+      "id": 39,
+      "nombre": "Argentina",
+      "precio": 70000,
+      "stock": 12,
+      "subcategoria": "Internacionales niño",
+      "categoria": "indumentaria",
+      "imagen": "/images/img-whatsapp-image-2025-05-19-at-9.03.35-pm-5-.jpeg.png"
     }
   ]
 }
