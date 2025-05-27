@@ -368,6 +368,15 @@
       "categoria": "indumentaria",
       "imagen": "/images/img-whatsapp-image-2025-05-19-at-9.03.36-pm.jpeg.png",
       "nombre": "Barcelona 2"
+    },
+    {
+      "id": 44,
+      "precio": 70000,
+      "stock": 12,
+      "categoria": "indumentaria",
+      "imagen": "/images/img-whatsapp-image-2025-05-22-at-8.13.05-am-5-.jpeg.png",
+      "subcategoria": "Internacionales niño",
+      "nombre": "Santos"
     }
   ]
 }
