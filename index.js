@@ -39,6 +39,7 @@ function mostrarProductos(productos) {
 
     contenedor.appendChild(card);
   });
+
 }
 
 
@@ -132,8 +133,6 @@ function filtrarPorSubcategoria(subcategoria) {
   mostrarProductos(productosFiltrados);
 }
 
-
-
 function volverAlMenuCategorias() {
   const submenu = document.getElementById(`submenu-${categoria}`);
   submenu.classList.add('oculto');
@@ -192,7 +191,6 @@ function obtenerUrlAbsoluta(ruta) {
   return `${baseUrl}/${ruta}`;
 }
 
-//Mostrar vista previa de imágenes en carrito de compra
 function mostrarVistaPrevia(producto) {
   const preview = document.getElementById('preview-panel');
   const imgElement = document.getElementById('preview-image');
@@ -244,7 +242,9 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
+
 function agregarAlCarrito(idProducto) {
+
   const cantidadInput = document.getElementById(`cantidad-${idProducto}`);
   const cantidad = parseInt(cantidadInput.value);
 
@@ -351,7 +351,7 @@ function modificarCantidad(idProducto, cambio) {
       document.getElementById('carrito-lateral').classList.add('activo');
     }
 
-  function cerrarCarrito() {
+    function cerrarCarrito() {
   const carritoLateral = document.getElementById("carrito-lateral");
   const botonCarrito = document.getElementById("boton-carrito");
 
@@ -382,7 +382,6 @@ function modificarCantidad(idProducto, cambio) {
   }, 3000);
 }
 
-
 function mostrarLoader() {
   document.getElementById("loader").style.display = "flex";
 }
@@ -390,25 +389,53 @@ function mostrarLoader() {
 function ocultarLoader() {
   document.getElementById("loader").style.display = "none";
 }
+
 function pagarConBold() {
   if (carrito.length === 0) return alert("Tu carrito está vacío.");
 
-  mostrarLoader(); // <-- Se muestra aquí, antes del fetch
+  const nombre = document.getElementById("nombre")?.value.trim();
+  const telefono = document.getElementById("telefono")?.value.trim();
+  const ciudad = document.getElementById("ciudad")?.value.trim();
+  const direccion = document.getElementById("direccion")?.value.trim();
+
+  if (!nombre || !telefono || !ciudad || !direccion) {
+    alert("Por favor completa todos los campos del formulario.");
+    return;
+  }
+  const total = carrito.reduce((sum, p) => sum + p.precio * p.cantidad, 0);
+
+  // --- Enviar el formulario oculto a Netlify ---
+  const form = document.forms['pedido'];
+  form.nombre.value = nombre;
+  form.telefono.value = telefono;
+  form.ciudad.value = ciudad;
+  form.direccion.value = direccion;
+  form.carrito.value = JSON.stringify(carrito);
+  form.total.value = total;
+
+  const formData = new FormData(form);
+  formData.append("form-name", "pedido");
+
+  fetch("/", {
+    method: "POST",
+    body: formData
+  });
+
+  // --- Mostrar loader y continuar con pago en Bold ---
+  cerrarModalFormulario();
+  mostrarLoader(); // muestra loader de tu UI
 
   const productosResumen = carrito.map(p => (
     `${p.nombre} x${p.cantidad} - $${p.precio.toLocaleString("es-CO")}`
   )).join('\n');
 
-  const total = carrito.reduce((sum, p) => sum + p.precio * p.cantidad, 0);
-
   const mensaje = `🧾 *Resumen de tu pedido:*\n\n${productosResumen}\n\n💰 *Total:* $${total.toLocaleString("es-CO")}\n\nGracias por tu compra en Camerino JIP 🎉`;
   const callback_url = `https://wa.me/+573177657335?text=${encodeURIComponent(mensaje)}`;
   const descripcion = "Pedido Camerino JIP";
-  const monto = total;
   const imagenUrl = obtenerUrlAbsoluta(carrito[0].imagen);
 
   const raw = JSON.stringify({
-    monto,
+    monto: total,
     descripcion,
     tipo: "CLOSE",
     image_url: imagenUrl,
@@ -423,16 +450,15 @@ function pagarConBold() {
   .then(response => response.json())
   .then(result => {
     if (result.payload && result.payload.url) {
-      // loader sigue visible antes de redirigir
       window.location.href = result.payload.url;
     } else {
       console.error('No se recibió un enlace de pago válido.', result);
-      ocultarLoader(); // sólo si hubo error
+      ocultarLoader();
     }
   })
   .catch(error => {
     console.error('Error al generar enlace:', error);
-    ocultarLoader(); // en caso de fallo
+    ocultarLoader();
   });
 }
 
@@ -557,7 +583,6 @@ document.getElementById("modal-imagen").addEventListener("click", (e) => {
   }
 });
 
-
 function modificarCantidadCarrito(index, accion) {
   const item = carrito[index];
   const productoOriginal = productosGlobal.find(p => p.id === item.id);
@@ -644,3 +669,23 @@ setTimeout(() => {
   ocultarLoader();
 }, 5000); // fuerza ocultar después de 5 segundos
 
+function mostrarModalFormulario() {
+  document.getElementById('modal-formulario').classList.remove('oculto');
+}
+
+function cerrarModalFormulario() {
+  document.getElementById('modal-formulario').classList.add('oculto');
+}
+
+document.getElementById("checkout-form").addEventListener("submit", function(e) {
+  e.preventDefault(); // evita el envío tradicional
+  pagarConBold();     // ejecuta tu función personalizada
+});
+
+// Oculta el modal si se vuelve desde la página de pago (por ejemplo usando botón "Volver")
+window.addEventListener("pageshow", function(event) {
+  if (event.persisted || performance.getEntriesByType("navigation")[0]?.type === "back_forward") {
+    cerrarModalFormulario();
+    ocultarLoader();
+  }
+});

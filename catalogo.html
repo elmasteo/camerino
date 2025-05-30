@@ -73,7 +73,8 @@
     <span>Total:</span>
     <span id="total-precio">$0</span>
   </div>
-    <button class="btn" onclick="pagarConBold()">Finalizar compra</button>
+    <button class="btn" onclick="mostrarModalFormulario()">Finalizar compra</button>
+
     <button class="btn" onclick="realizarAbono()">Abonar</button>
   </div>
 </div>
@@ -82,7 +83,7 @@
   <div id="notification" class="notification"></div>
 
 <div style="text-align: center; margin-top: 2rem;">
-  <a href="https://camerinojip.com/" class="boton-volver">
+  <a href="https://camerinoji.com/" class="boton-volver">
     ← Volver a la Página Principal
   </a>
 </div>
@@ -99,6 +100,40 @@
     <p>Serás redirigido a la página de pagos...</p>
   </div>
 </div>
+
+<div id="modal-formulario" class="modal oculto">
+  <div class="modal-contenido">
+    <span class="cerrar-modal" onclick="cerrarModalFormulario()">✕</span>
+    <h2>Datos para el envío</h2>
+    <form name="checkout" method="POST" id="checkout-form">
+      <input type="hidden" name="bot-field" />
+      <input type="hidden" name="productos" id="productos-seleccionados" />
+
+      <label>Nombre:<input type="text" name="nombre" id="nombre" required /></label>
+      <label>Teléfono:<input type="text" name="telefono" id="telefono" required /></label>
+      <label>Ciudad:<input type="text" name="ciudad" id="ciudad" required /></label>
+      <label>Dirección:<input type="text" name="direccion" id="direccion" required /></label>
+
+      <label>
+        <input type="checkbox" required name="autorizacion" />
+        Autorizo el tratamiento de mis datos personales conforme a la
+        <a href="politica-datos.html" target="_blank">política de privacidad</a>.
+      </label>
+
+      <button class="btn" type="submit" id="btn-enviar-formulario">Finalizar compra</button>
+    </form>
+  </div>
+</div>
+
+<form name="pedido" method="POST" data-netlify="true" hidden>
+  <input type="text" name="nombre" />
+  <input type="text" name="telefono" />
+  <input type="text" name="ciudad" />
+  <input type="text" name="direccion" />
+  <textarea name="carrito"></textarea>
+  <input type="text" name="total" />
+</form>
+
 
 <script type="text/javascript" src="index.js"></script>
 </body>
