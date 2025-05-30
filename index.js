@@ -383,47 +383,58 @@ function modificarCantidad(idProducto, cambio) {
 }
 
 
-    function pagarConBold() {
-      if (carrito.length === 0) return alert("Tu carrito está vacío.");
+function mostrarLoader() {
+  document.getElementById("loader").style.display = "flex";
+}
 
-      const productosResumen = carrito.map(p => (
-        `${p.nombre} x${p.cantidad} - $${p.precio.toLocaleString("es-CO")}`
-      )).join('\n');
+function ocultarLoader() {
+  document.getElementById("loader").style.display = "none";
+}
+function pagarConBold() {
+  if (carrito.length === 0) return alert("Tu carrito está vacío.");
 
-      const total = carrito.reduce((sum, p) => sum + p.precio * p.cantidad, 0);
+  mostrarLoader(); // <-- Se muestra aquí, antes del fetch
 
-      const mensaje = `🧾 *Resumen de tu pedido:*\n\n${productosResumen}\n\n💰 *Total:* $${total.toLocaleString("es-CO")}\n\nGracias por tu compra en Camerino JIP 🎉`;
+  const productosResumen = carrito.map(p => (
+    `${p.nombre} x${p.cantidad} - $${p.precio.toLocaleString("es-CO")}`
+  )).join('\n');
 
-      const callback_url = `https://wa.me/+573177657335?text=${encodeURIComponent(mensaje)}`;
+  const total = carrito.reduce((sum, p) => sum + p.precio * p.cantidad, 0);
 
-      const descripcion = "Pedido Camerino JIP";
+  const mensaje = `🧾 *Resumen de tu pedido:*\n\n${productosResumen}\n\n💰 *Total:* $${total.toLocaleString("es-CO")}\n\nGracias por tu compra en Camerino JIP 🎉`;
+  const callback_url = `https://wa.me/+573177657335?text=${encodeURIComponent(mensaje)}`;
+  const descripcion = "Pedido Camerino JIP";
+  const monto = total;
+  const imagenUrl = obtenerUrlAbsoluta(carrito[0].imagen);
 
-      const monto = carrito.reduce((sum, item) => sum + (item.precio * item.cantidad), 0);
-      const imagenUrl = obtenerUrlAbsoluta(carrito[0].imagen);
+  const raw = JSON.stringify({
+    monto,
+    descripcion,
+    tipo: "CLOSE",
+    image_url: imagenUrl,
+    callback_url
+  });
 
-      const raw = JSON.stringify({
-        monto,
-        descripcion,
-        tipo: "CLOSE",
-        image_url: imagenUrl,
-        callback_url
-      });
-
-      fetch("/.netlify/functions/crearLinkPago", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: raw
-      })
-      .then(response => response.json())
-      .then(result => {
-        if (result.payload && result.payload.url) {
-          window.location.href = result.payload.url;
-        } else {
-          console.error('No se recibió un enlace de pago válido.', result);
-        }
-      })
-      .catch(error => console.error('Error al generar enlace:', error));
+  fetch("/.netlify/functions/crearLinkPago", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: raw
+  })
+  .then(response => response.json())
+  .then(result => {
+    if (result.payload && result.payload.url) {
+      // loader sigue visible antes de redirigir
+      window.location.href = result.payload.url;
+    } else {
+      console.error('No se recibió un enlace de pago válido.', result);
+      ocultarLoader(); // sólo si hubo error
     }
+  })
+  .catch(error => {
+    console.error('Error al generar enlace:', error);
+    ocultarLoader(); // en caso de fallo
+  });
+}
 
    function realizarAbono() {
     const descripcion = "Abono para curso tufting o compra de tapetes personalizados"; // Descripción general
@@ -433,30 +444,36 @@ function modificarCantidad(idProducto, cambio) {
 }
 
 function obtenerCotizacion(descripcion, imagenUrl) {
-    const mensaje = `Hola! Realicé el pago exitoso del abono: ${descripcion}`;
-    const callback_url = `https://wa.me/+573177657335?text=${encodeURIComponent(mensaje)}`;
+  mostrarLoader();
 
-    const raw = JSON.stringify({
-        descripcion: descripcion,
-        tipo: "OPEN",
-        image_url: imagenUrl,
-        callback_url: callback_url
-    });
+  const mensaje = `Hola! Realicé el pago exitoso del abono: ${descripcion}`;
+  const callback_url = `https://wa.me/+573177657335?text=${encodeURIComponent(mensaje)}`;
 
-    fetch("/.netlify/functions/crearLinkPago", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: raw
-    })
-    .then(response => response.json())
-    .then(result => {
-        if (result.payload && result.payload.url) {
-            window.location.href = result.payload.url;
-        } else {
-            console.error('Error: No se recibió un enlace de pago válido.', result);
-        }
-    })
-    .catch(error => console.log('error', error));
+  const raw = JSON.stringify({
+    descripcion: descripcion,
+    tipo: "OPEN",
+    image_url: imagenUrl,
+    callback_url: callback_url
+  });
+
+  fetch("/.netlify/functions/crearLinkPago", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: raw
+  })
+  .then(response => response.json())
+  .then(result => {
+    if (result.payload && result.payload.url) {
+      window.location.href = result.payload.url;
+    } else {
+      console.error('Error: No se recibió un enlace de pago válido.', result);
+      ocultarLoader();
+    }
+  })
+  .catch(error => {
+    console.log('error', error);
+    ocultarLoader();
+  });
 }
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -619,4 +636,11 @@ function marcarCategoriaActiva(id) {
 
 document.addEventListener('DOMContentLoaded', crearBotonesFlotantes);
 
+window.addEventListener("pageshow", () => {
+  ocultarLoader();
+});
+
+setTimeout(() => {
+  ocultarLoader();
+}, 5000); // fuerza ocultar después de 5 segundos
 
