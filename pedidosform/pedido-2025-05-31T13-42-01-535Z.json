@@ -1,0 +1,19 @@
+{
+  "nombre": "test test",
+  "telefono": "test test",
+  "ciudad": "test test",
+  "direccion": "test test",
+  "carrito": [
+    {
+      "id": 7,
+      "nombre": "One Piece",
+      "precio": 260000,
+      "imagen": "./images/onepiece.jpeg",
+      "categoria": "tapetes",
+      "stock": 1,
+      "cantidad": 1
+    }
+  ],
+  "total": 260000,
+  "fecha": "2025-05-31T13:42:01.535Z"
+}
