@@ -133,6 +133,8 @@ function filtrarPorSubcategoria(subcategoria) {
   mostrarProductos(productosFiltrados);
 }
 
+
+
 function volverAlMenuCategorias() {
   const submenu = document.getElementById(`submenu-${categoria}`);
   submenu.classList.add('oculto');
@@ -241,7 +243,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
-
 
 function agregarAlCarrito(idProducto) {
 
@@ -390,7 +391,7 @@ function ocultarLoader() {
   document.getElementById("loader").style.display = "none";
 }
 
-function pagarConBold() {
+async function pagarConBold() {
   if (carrito.length === 0) return alert("Tu carrito está vacío.");
 
   const nombre = document.getElementById("nombre")?.value.trim();
@@ -402,65 +403,76 @@ function pagarConBold() {
     alert("Por favor completa todos los campos del formulario.");
     return;
   }
+
   const total = carrito.reduce((sum, p) => sum + p.precio * p.cantidad, 0);
 
-  // --- Enviar el formulario oculto a Netlify ---
-  const form = document.forms['pedido'];
-  form.nombre.value = nombre;
-  form.telefono.value = telefono;
-  form.ciudad.value = ciudad;
-  form.direccion.value = direccion;
-  form.carrito.value = JSON.stringify(carrito);
-  form.total.value = total;
+  const pedido = {
+    nombre,
+    telefono,
+    ciudad,
+    direccion,
+    carrito,
+    total
+  };
 
-  const formData = new FormData(form);
-  formData.append("form-name", "pedido");
+  try {
+    // Enviar datos a función serverless para guardar pedido y enviar correo
+    const response = await fetch("/.netlify/functions/guardarPedido", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(pedido)
+    });
 
-  fetch("/", {
-    method: "POST",
-    body: formData
-  });
+    const result = await response.json();
 
-  // --- Mostrar loader y continuar con pago en Bold ---
-  cerrarModalFormulario();
-  mostrarLoader(); // muestra loader de tu UI
+    if (response.ok) {
+      cerrarModalFormulario();
+      mostrarLoader();
 
-  const productosResumen = carrito.map(p => (
-    `${p.nombre} x${p.cantidad} - $${p.precio.toLocaleString("es-CO")}`
-  )).join('\n');
+      const productosResumen = carrito.map(p => (
+        `${p.nombre} x${p.cantidad} - $${p.precio.toLocaleString("es-CO")}`
+      )).join('\n');
 
-  const mensaje = `🧾 *Resumen de tu pedido:*\n\n${productosResumen}\n\n💰 *Total:* $${total.toLocaleString("es-CO")}\n\nGracias por tu compra en Camerino JIP 🎉`;
-  const callback_url = `https://wa.me/+573177657335?text=${encodeURIComponent(mensaje)}`;
-  const descripcion = "Pedido Camerino JIP";
-  const imagenUrl = obtenerUrlAbsoluta(carrito[0].imagen);
+      const mensaje = `🧾 *Resumen de tu pedido:*\n\n${productosResumen}\n\n💰 *Total:* $${total.toLocaleString("es-CO")}\n\nGracias por tu compra en Camerino JIP 🎉`;
+      const callback_url = `https://wa.me/+573177657335?text=${encodeURIComponent(mensaje)}`;
+      const descripcion = "Pedido Camerino JIP";
+      const imagenUrl = obtenerUrlAbsoluta(carrito[0].imagen);
 
-  const raw = JSON.stringify({
-    monto: total,
-    descripcion,
-    tipo: "CLOSE",
-    image_url: imagenUrl,
-    callback_url
-  });
+      const raw = JSON.stringify({
+        monto: total,
+        descripcion,
+        tipo: "CLOSE",
+        image_url: imagenUrl,
+        callback_url
+      });
 
-  fetch("/.netlify/functions/crearLinkPago", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: raw
-  })
-  .then(response => response.json())
-  .then(result => {
-    if (result.payload && result.payload.url) {
-      window.location.href = result.payload.url;
+      const pagoResponse = await fetch("/.netlify/functions/crearLinkPago", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: raw
+      });
+
+      const pagoResult = await pagoResponse.json();
+
+      if (pagoResponse.ok && pagoResult.payload?.url) {
+        window.location.href = pagoResult.payload.url;
+      } else {
+        console.error('No se recibió un enlace de pago válido.', pagoResult);
+        ocultarLoader();
+      }
     } else {
-      console.error('No se recibió un enlace de pago válido.', result);
-      ocultarLoader();
+      alert("Error al procesar el pedido: " + (result.error || "Intenta de nuevo más tarde."));
     }
-  })
-  .catch(error => {
-    console.error('Error al generar enlace:', error);
+  } catch (error) {
+    alert("Error en la conexión: " + error.message);
     ocultarLoader();
-  });
+  }
 }
+
+document.getElementById("checkout-form").addEventListener("submit", function(e) {
+  e.preventDefault();
+  pagarConBold();
+});
 
    function realizarAbono() {
     const descripcion = "Abono para curso tufting o compra de tapetes personalizados"; // Descripción general
@@ -570,6 +582,9 @@ function contraerTodosLosSubmenus() {
   });
 }
 
+
+
+
 // Cerrar modal desde el botón ✕
 document.getElementById("cerrar-modal").addEventListener("click", () => {
   document.getElementById("modal-imagen").style.display = "none";
@@ -582,6 +597,7 @@ document.getElementById("modal-imagen").addEventListener("click", (e) => {
     e.currentTarget.style.display = "none";
   }
 });
+
 
 function modificarCantidadCarrito(index, accion) {
   const item = carrito[index];
@@ -676,11 +692,6 @@ function mostrarModalFormulario() {
 function cerrarModalFormulario() {
   document.getElementById('modal-formulario').classList.add('oculto');
 }
-
-document.getElementById("checkout-form").addEventListener("submit", function(e) {
-  e.preventDefault(); // evita el envío tradicional
-  pagarConBold();     // ejecuta tu función personalizada
-});
 
 // Oculta el modal si se vuelve desde la página de pago (por ejemplo usando botón "Volver")
 window.addEventListener("pageshow", function(event) {

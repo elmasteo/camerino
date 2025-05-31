@@ -35,3 +35,19 @@ collections:
                   - { label: "Indumentaria Deportiva", value: "indumentaria" }
                   - { label: "Accesorios", value: "accesorios" }
               - { label: "Imagen", name: "imagen", widget: "image" }
+  - name: "pedidosform"
+    label: "Pedidosform"
+    folder: "pedidosform"
+    label_singular: "pedidosForm"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{hour}}{{minute}}{{second}}"
+    format: "json"
+    extension: "json"
+    fields:
+      - { label: "Nombre", name: "nombre", widget: "string" }
+      - { label: "Teléfono", name: "telefono", widget: "string" }
+      - { label: "Ciudad", name: "ciudad", widget: "string" }
+      - { label: "Dirección", name: "direccion", widget: "string" }
+      - { label: "Productos", name: "carrito", widget: "text" }
+      - { label: "Total", name: "total", widget: "string" }
+      - { label: "Fecha", name: "fecha", widget: "datetime" }
