@@ -1,0 +1,39 @@
+{
+  "nombre": "Test test 2",
+  "telefono": "test test",
+  "ciudad": "test test",
+  "direccion": "cra falsa 123",
+  "carrito": [
+    {
+      "id": 19,
+      "nombre": "Visitante - Santa fe",
+      "precio": 70000,
+      "stock": 12,
+      "subcategoria": "Santa fe",
+      "categoria": "indumentaria",
+      "imagen": "/images/img-whatsapp-image-2025-05-22-at-8.12.59-am-5-.jpeg.png",
+      "cantidad": 2
+    },
+    {
+      "id": 26,
+      "imagen": "/images/img-whatsapp-image-2025-05-22-at-8.13.03-am-5-.jpeg.png",
+      "stock": 12,
+      "subcategoria": "Santa fe",
+      "precio": 70000,
+      "nombre": "Camiseta Presentación - Santa fe",
+      "categoria": "indumentaria",
+      "cantidad": 1
+    },
+    {
+      "id": 1,
+      "nombre": "Kid Boo",
+      "precio": 360000,
+      "imagen": "./images/majinboo.jpeg",
+      "categoria": "tapetes",
+      "stock": 1,
+      "cantidad": 1
+    }
+  ],
+  "total": 570000,
+  "fecha": "2025-05-31T13:50:33.339Z"
+}
