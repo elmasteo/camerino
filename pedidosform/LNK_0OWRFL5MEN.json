@@ -1,0 +1,20 @@
+{
+  "nombre": "Esta es una prueba ignorar",
+  "telefonoCompleto": "573157862008",
+  "direccion": "Cra falsa 123",
+  "ciudad": "Bogotá",
+  "carrito": [
+    {
+      "id": 3,
+      "nombre": "Deadpool - Wolverine",
+      "precio": 260000,
+      "imagen": "./images/deadpool.jpeg",
+      "categoria": "tapetes",
+      "stock": 1,
+      "cantidad": 1
+    }
+  ],
+  "total": 260000,
+  "payment_link": "LNK_0OWRFL5MEN",
+  "fecha": "2025-06-05T16:14:03.198Z"
+}
