@@ -1,0 +1,20 @@
+{
+  "nombre": "esta es una prueba ignore",
+  "telefonoCompleto": "573157862008",
+  "direccion": "Cra falsa 123",
+  "ciudad": "Bogotá",
+  "carrito": [
+    {
+      "id": 4,
+      "nombre": "Mario Tortuga",
+      "precio": 260000,
+      "imagen": "./images/tortuga.jpeg",
+      "categoria": "tapetes",
+      "stock": 1,
+      "cantidad": 1
+    }
+  ],
+  "total": 260000,
+  "payment_link": "LNK_ISK9YEI8T5",
+  "fecha": "2025-06-05T17:01:13.744Z"
+}
