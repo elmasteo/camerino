@@ -443,7 +443,7 @@ async function pagarConBold() {
     )).join('\n');
 
     const mensaje = `🧾 *Resumen de tu pedido:*\n\n${productosResumen}\n\n💰 *Total:* $${total.toLocaleString("es-CO")}\n\nGracias por tu compra en Camerino JIP 🎉`;
-    const callback_url = "https://camerinojipsandbox.netlify.app/pago-exitoso";
+    const callback_url = "https://camerinojip.com/pago-exitoso";
     const descripcion = "Pedido Camerino JIP";
     const imagenUrl = obtenerUrlAbsoluta(carrito[0].imagen);
 
