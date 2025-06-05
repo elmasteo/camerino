@@ -59,7 +59,7 @@ Pronto te contactaremos para coordinar el envío.
 Gracias por comprar en *CamerinoJip*!`;
 
     const evoRes = await fetch(
-      'https://ubuntu.tail55c7a1.ts.net/message/sendText/CamerinoJIP',
+      'https://ip-172-31-35-225.taile4b68d.ts.net/message/sendText/CamerinoJIP',
       {
         method: 'POST',
         headers: {
@@ -93,7 +93,7 @@ Gracias por comprar en *CamerinoJip*!`;
     Referencia: ${referencia}
     `;
 
-    await fetch('https://ubuntu.tail55c7a1.ts.net/message/sendText/CamerinoJIP', {
+    await fetch('https://ip-172-31-35-225.taile4b68d.ts.net/message/sendText/CamerinoJIP', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
