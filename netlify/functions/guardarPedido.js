@@ -30,7 +30,7 @@ exports.handler = async (event) => {
       owner: process.env.GITHUB_USER,
       repo: process.env.GITHUB_REPO,
       path: archivo,
-      message: `Nuevo pedido de ${data.nombre}`,
+      message: `Nueva intención de pago de ${data.nombre}`,
       content: contenido,
       committer: {
         name: "Pedido Bot",
@@ -57,9 +57,9 @@ exports.handler = async (event) => {
     await transporter.sendMail({
       from: `"Tienda CamerinoJip" <${process.env.MAIL_USER}>`,
       to: "sago980302@hotmail.com, Johnalexanderpatino@gmail.com",
-      subject: `Nuevo pedido de ${data.nombre}`,
+      subject: `Nuevo intención de pago de ${data.nombre}`,
       text: `
-📦 Pedido nuevo:
+📦 Nueva intención de pago:
 
 Nombre: ${data.nombre}
 Teléfono: ${data.telefonoCompleto}
@@ -89,18 +89,22 @@ ${carritoTexto}
 Referencia: ${payment_link}
 `;
 
-await fetch('https://ip-172-31-35-225.taile4b68d.ts.net/message/sendText/CamerinoJIP', {
-  method: 'POST',
-  headers: {
-    'Content-Type': 'application/json',
-    apikey: `${process.env.EVOLUTION_API_TOKEN}`,
-  },
-  body: JSON.stringify({
-    number: '573177657335',
-    text: mensajeAdmin,
-  }),
-});
-
+    // Envío por WhatsApp con manejo de errores
+    try {
+     await fetch('https://ip-172-31-35-225.taile4b68d.ts.net/message/sendText/CamerinoJIP', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        apikey: `${process.env.EVOLUTION_API_TOKEN}`,
+      },
+      body: JSON.stringify({
+        number: '573177657335',
+        text: mensajeAdmin,
+      }),
+    });
+    } catch (e) {
+      console.error("Error enviando mensaje por WhatsApp:", e.message);
+    }
 
     return {
       statusCode: 200,
