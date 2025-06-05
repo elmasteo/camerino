@@ -1,0 +1,20 @@
+{
+  "nombre": "Santiago gomez",
+  "telefonoCompleto": "573157862008",
+  "direccion": "cra93A #73A-59",
+  "ciudad": "Bogotá",
+  "carrito": [
+    {
+      "id": 2,
+      "nombre": "Cell",
+      "precio": 360000,
+      "imagen": "./images/cell.jpeg",
+      "categoria": "tapetes",
+      "stock": 1,
+      "cantidad": 1
+    }
+  ],
+  "total": 360000,
+  "payment_link": "LNK_HJGRKFETDT",
+  "fecha": "2025-06-05T02:12:17.902Z"
+}
