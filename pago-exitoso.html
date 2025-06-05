@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Explora el arte del tufting con Camerino JIP. Diseñamos tapetes personalizados únicos y llenos de estilo. ¡Revisa nuestro catálogo o contáctanos por WhatsApp!">
+    <title>Pago Exitoso | Camerino JIP | Tapetes Personalizados con Arte Tufting</title>
+    <link href="./images/camerinoicon.ico" rel="icon" type="image/svg">
+  <title>Pago Exitoso</title>
+  <link rel="stylesheet" href="catalogo.css">
+  <style>
+    body {
+      background-color: #f3f4f6;
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 2rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .card {
+      background: white;
+      border-radius: 1rem;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+      padding: 2rem;
+      max-width: 600px;
+      width: 100%;
+      animation: fadeIn 0.3s ease-in-out;
+    }
+
+    h1 {
+      color: #10b981;
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    h2 {
+      margin-top: 2rem;
+      font-size: 1.2rem;
+      border-bottom: 2px solid #e5e7eb;
+      padding-bottom: 0.5rem;
+    }
+
+    .producto {
+      display: flex;
+      align-items: center;
+      margin: 1rem 0;
+      gap: 1rem;
+      border-bottom: 1px solid #e5e7eb;
+      padding-bottom: 1rem;
+    }
+
+    .producto img {
+      width: 72px;
+      height: 72px;
+      object-fit: cover;
+      border-radius: 0.5rem;
+      border: 1px solid #ddd;
+    }
+
+    .producto-info {
+      flex: 1;
+      font-size: 0.95rem;
+    }
+
+    .boton-volver {
+      display: inline-block;
+      margin-top: 2rem;
+      background: #10b981;
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border-radius: 9999px;
+      text-decoration: none;
+      font-weight: bold;
+      text-align: center;
+      transition: background 0.3s ease;
+    }
+
+    .boton-volver:hover {
+      background: #059669;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .dato {
+      margin-bottom: 0.25rem;
+    }
+
+    .dato strong {
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>¡Pago exitoso!</h1>
+    <p class="dato">Gracias por tu compra, <strong id="nombre"></strong>.</p>
+    <p class="dato">📞 <strong id="telefono"></strong></p>
+    <p class="dato">📍 <strong id="direccion"></strong>, <span id="ciudad"></span></p>
+
+    <h2>Resumen del pedido</h2>
+    <div id="lista-productos"></div>
+    <p style="margin-top:1rem;"><strong>Total pagado:</strong> $<span id="total"></span> COP</p>
+
+    <a class="boton-volver" href="https://camerinojip.com/catalogo">Volver al inicio</a>
+  </div>
+
+  <script>
+    const pedido = JSON.parse(localStorage.getItem("pedido_exitoso"));
+
+    if (pedido) {
+      document.getElementById("nombre").textContent = pedido.nombre;
+      document.getElementById("telefono").textContent = pedido.telefonoCompleto;
+      document.getElementById("direccion").textContent = pedido.direccion;
+      document.getElementById("ciudad").textContent = pedido.ciudad;
+      document.getElementById("total").textContent = pedido.total.toLocaleString();
+
+      const lista = document.getElementById("lista-productos");
+
+      pedido.carrito.forEach(item => {
+        const div = document.createElement("div");
+        div.className = "producto";
+        div.innerHTML = `
+          <img src="${item.imagen}" alt="${item.nombre}">
+          <div class="producto-info">
+            <strong>${item.nombre}</strong><br>
+            Cantidad: ${item.cantidad} – Precio: $${item.precio.toLocaleString()}
+          </div>
+        `;
+        lista.appendChild(div);
+      });
+
+      localStorage.removeItem("pedido_exitoso");
+    } else {
+      document.body.innerHTML = "<p style='text-align:center;'>No se encontró ningún pedido reciente.</p>";
+    }
+  </script>
+</body>
+</html>

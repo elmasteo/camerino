@@ -5,14 +5,21 @@ exports.handler = async (event) => {
     return { statusCode: 405, body: "Método no permitido" };
   }
 
-  // Importar Octokit dinámicamente
   const { Octokit } = await import("@octokit/rest");
 
   try {
     const data = JSON.parse(event.body);
-    const fecha = new Date().toISOString().replace(/[:.]/g, "-");
+
+    if (!data.payment_link) {
+      return {
+        statusCode: 400,
+        body: "Falta el campo 'referencia' en el pedido.",
+      };
+    }
+
+    const payment_link = data.payment_link;
     const fechaISO = new Date().toISOString();
-    const archivo = `pedidosform/pedido-${fecha}.json`;
+    const archivo = `pedidosform/${payment_link}.json`;
 
     data.fecha = fechaISO;
 
@@ -55,19 +62,49 @@ exports.handler = async (event) => {
 📦 Pedido nuevo:
 
 Nombre: ${data.nombre}
-Teléfono: ${data.telefono}
+Teléfono: ${data.telefonoCompleto}
 Ciudad: ${data.ciudad}
 Dirección: ${data.direccion}
 Total: ${data.total}
 
 Productos:
 ${carritoTexto}
+
+Referencia: ${payment_link}
       `
     });
 
+    const mensajeAdmin = `
+📢 Nueva intención de pago recibida
+
+👤 ${data.nombre}
+📞 ${data.telefonoCompleto}
+🏙️ ${data.ciudad}
+📍 ${data.direccion}
+💰 Total: $${data.total.toLocaleString("es-CO")}
+
+🧾 Productos:
+${carritoTexto}
+
+Referencia: ${payment_link}
+`;
+
+await fetch('https://ubuntu.tail55c7a1.ts.net/message/sendText/CamerinoJIP', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json',
+    apikey: `${process.env.EVOLUTION_API_TOKEN}`,
+  },
+  body: JSON.stringify({
+    number: '573177657335',
+    text: mensajeAdmin,
+  }),
+});
+
+
     return {
       statusCode: 200,
-      body: JSON.stringify({ mensaje: "Pedido registrado con éxito" })
+      body: JSON.stringify({ mensaje: "Pedido registrado con éxito", payment_link })
     };
 
   } catch (error) {

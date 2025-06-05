@@ -39,7 +39,6 @@ function mostrarProductos(productos) {
 
     contenedor.appendChild(card);
   });
-
 }
 
 
@@ -132,8 +131,6 @@ function filtrarPorSubcategoria(subcategoria) {
   );
   mostrarProductos(productosFiltrados);
 }
-
-
 
 function volverAlMenuCategorias() {
   const submenu = document.getElementById(`submenu-${categoria}`);
@@ -391,88 +388,167 @@ function ocultarLoader() {
   document.getElementById("loader").style.display = "none";
 }
 
-async function pagarConBold() {
-  if (carrito.length === 0) return alert("Tu carrito está vacío.");
-
-  const nombre = document.getElementById("nombre")?.value.trim();
-  const telefono = document.getElementById("telefono")?.value.trim();
-  const ciudad = document.getElementById("ciudad")?.value.trim();
-  const direccion = document.getElementById("direccion")?.value.trim();
-
-  if (!nombre || !telefono || !ciudad || !direccion) {
-    alert("Por favor completa todos los campos del formulario.");
-    return;
-  }
-
-  const total = carrito.reduce((sum, p) => sum + p.precio * p.cantidad, 0);
-
-  const pedido = {
-    nombre,
-    telefono,
-    ciudad,
-    direccion,
-    carrito,
-    total
-  };
-
-  try {
-    // Enviar datos a función serverless para guardar pedido y enviar correo
-    const response = await fetch("/.netlify/functions/guardarPedido", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(pedido)
-    });
-
-    const result = await response.json();
-
-    if (response.ok) {
-      cerrarModalFormulario();
-      mostrarLoader();
-
-      const productosResumen = carrito.map(p => (
-        `${p.nombre} x${p.cantidad} - $${p.precio.toLocaleString("es-CO")}`
-      )).join('\n');
-
-      const mensaje = `🧾 *Resumen de tu pedido:*\n\n${productosResumen}\n\n💰 *Total:* $${total.toLocaleString("es-CO")}\n\nGracias por tu compra en Camerino JIP 🎉`;
-      const callback_url = `https://wa.me/+573177657335?text=${encodeURIComponent(mensaje)}`;
-      const descripcion = "Pedido Camerino JIP";
-      const imagenUrl = obtenerUrlAbsoluta(carrito[0].imagen);
-
-      const raw = JSON.stringify({
-        monto: total,
-        descripcion,
-        tipo: "CLOSE",
-        image_url: imagenUrl,
-        callback_url
-      });
-
-      const pagoResponse = await fetch("/.netlify/functions/crearLinkPago", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: raw
-      });
-
-      const pagoResult = await pagoResponse.json();
-
-      if (pagoResponse.ok && pagoResult.payload?.url) {
-        window.location.href = pagoResult.payload.url;
-      } else {
-        console.error('No se recibió un enlace de pago válido.', pagoResult);
-        ocultarLoader();
-      }
-    } else {
-      alert("Error al procesar el pedido: " + (result.error || "Intenta de nuevo más tarde."));
-    }
-  } catch (error) {
-    alert("Error en la conexión: " + error.message);
-    ocultarLoader();
-  }
-}
 
 document.getElementById("checkout-form").addEventListener("submit", function(e) {
   e.preventDefault();
   pagarConBold();
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  const telefonoInput = document.getElementById('telefono');
+  const codigoPaisSelect = document.getElementById('codigo-pais');
+
+  const longitudesMaximas = {
+    "57": 10,  // Colombia
+    "52": 10,  // México
+    "54": 10,  // Argentina
+    "56": 9,   // Chile
+    "51": 9,   // Perú
+    "58": 10,  // Venezuela
+    "593": 9,  // Ecuador
+    "502": 8,  // Guatemala
+    "504": 8,  // Honduras
+    "505": 8,  // Nicaragua
+    "506": 8,  // Costa Rica
+    "507": 8,  // Panamá
+    "53": 8,   // Cuba
+    "1": 10    // EE.UU. / Canadá
+  };
+
+  telefonoInput.addEventListener('input', (e) => {
+    const codigo = codigoPaisSelect.value;
+    const maxLength = longitudesMaximas[codigo] || 10;
+
+    // Eliminar caracteres no numéricos
+    let soloNumeros = e.target.value.replace(/\D/g, '');
+
+    // Limitar a la longitud permitida
+    if (soloNumeros.length > maxLength) {
+      soloNumeros = soloNumeros.slice(0, maxLength);
+    }
+
+    e.target.value = soloNumeros;
+  });
+});
+
+
+async function pagarConBold() {
+  try {
+    
+
+    const total = carrito.reduce((sum, p) => sum + p.precio * p.cantidad, 0); // <- Aquí primero
+
+    const productosResumen = carrito.map(p => (
+      `${p.nombre} x${p.cantidad} - $${p.precio.toLocaleString("es-CO")}`
+    )).join('\n');
+
+    const mensaje = `🧾 *Resumen de tu pedido:*\n\n${productosResumen}\n\n💰 *Total:* $${total.toLocaleString("es-CO")}\n\nGracias por tu compra en Camerino JIP 🎉`;
+    const callback_url = "https://camerinojipsandbox.netlify.app/pago-exitoso";
+    const descripcion = "Pedido Camerino JIP";
+    const imagenUrl = obtenerUrlAbsoluta(carrito[0].imagen);
+
+    // 1. Generar enlace de pago
+    const raw = JSON.stringify({
+      monto: total,
+      descripcion,
+      tipo: "CLOSE",
+      image_url: imagenUrl,
+      callback_url
+    });
+
+    const pagoResponse = await fetch("/.netlify/functions/crearLinkPago", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: raw
+    });
+
+    const pagoResult = await pagoResponse.json();
+
+    if (!pagoResponse.ok || !pagoResult.url || !pagoResult.payment_link) {
+      console.error('No se recibió un enlace de pago válido.', pagoResult);
+      ocultarLoader();
+      return;
+    }
+
+  const codigoPais = document.getElementById('codigo-pais').value;
+  const telefonoSinCodigo = document.getElementById('telefono').value.replace(/\D/g, '');
+  const telefonoCompleto = `${codigoPais}${telefonoSinCodigo}`;
+
+
+  const nombre = document.getElementById("nombre")?.value.trim();
+  //const telefono = document.getElementById("telefono")?.value.trim();
+  const ciudad = document.getElementById("ciudad")?.value.trim();
+  const direccion = document.getElementById("direccion")?.value.trim();
+
+  if (!nombre || !telefonoSinCodigo || !ciudad || !direccion) {
+    alert("Por favor completa todos los campos del formulario.");
+    return;
+  }
+
+    // Validación por país
+  const reglasValidacion = {
+    "57": /^[3][0-9]{9}$/,        // Colombia
+    "52": /^[1-9][0-9]{9}$/,      // México
+    "54": /^[1-9][0-9]{9}$/,      // Argentina
+    "56": /^[2-9][0-9]{8}$/,      // Chile
+    "51": /^[1-9][0-9]{8}$/,      // Perú
+    "58": /^[4]{1}[0-9]{9}$/,     // Venezuela
+    "593": /^[2-9][0-9]{7,8}$/,   // Ecuador
+    "502": /^[2-7][0-9]{7}$/,     // Guatemala
+    "504": /^[2-9][0-9]{7}$/,     // Honduras
+    "505": /^[5-8][0-9]{7}$/,     // Nicaragua
+    "506": /^[2-8][0-9]{7}$/,     // Costa Rica
+    "507": /^[1-9][0-9]{6,7}$/,   // Panamá
+    "53": /^[5-9][0-9]{7}$/,      // Cuba
+    "1": /^[2-9][0-9]{9}$/        // EE.UU. / Canadá
+  };
+
+  const regex = reglasValidacion[codigoPais];
+  if (!regex || !regex.test(telefonoSinCodigo)) {
+    alert("Por favor ingresa un número de teléfono válido.");
+    ocultarLoader();
+    return;
+  }
+
+  mostrarLoader();
+
+
+    const pedido = {
+      nombre,
+      telefonoCompleto,
+      direccion,
+      ciudad,
+      carrito,
+      total,
+      payment_link: pagoResult.payment_link
+    };
+
+    const guardarResponse = await fetch("/.netlify/functions/guardarPedido", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(pedido)
+    });
+
+    const result = await guardarResponse.json();
+
+    if (!guardarResponse.ok) {
+      alert("Error al guardar el pedido: " + (result.error || "Intenta de nuevo más tarde."));
+      ocultarLoader();
+      return;
+    }
+
+    cerrarModalFormulario();
+
+    localStorage.setItem("pedido_exitoso", JSON.stringify(pedido));
+
+    // 3. Redirigir al link de pago
+    window.location.href = pagoResult.url;
+
+  } catch (error) {
+    alert("Error en la conexión: " + error.message);
+    ocultarLoader();
+  }
+}
 
    function realizarAbono() {
     const descripcion = "Abono para curso tufting o compra de tapetes personalizados"; // Descripción general
@@ -481,8 +557,10 @@ document.getElementById("checkout-form").addEventListener("submit", function(e) 
     obtenerCotizacion(descripcion, imagenUrl); // Llamamos a la función para obtener el enlace con monto abierto
 }
 
-function obtenerCotizacion(descripcion, imagenUrl) {
-  mostrarLoader();
+async function obtenerCotizacion(descripcion, imagenUrl) {
+
+  try{
+      mostrarLoader();
 
   const mensaje = `Hola! Realicé el pago exitoso del abono: ${descripcion}`;
   const callback_url = `https://wa.me/+573177657335?text=${encodeURIComponent(mensaje)}`;
@@ -494,24 +572,27 @@ function obtenerCotizacion(descripcion, imagenUrl) {
     callback_url: callback_url
   });
 
-  fetch("/.netlify/functions/crearLinkPago", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: raw
-  })
-  .then(response => response.json())
-  .then(result => {
-    if (result.payload && result.payload.url) {
-      window.location.href = result.payload.url;
-    } else {
-      console.error('Error: No se recibió un enlace de pago válido.', result);
+    const pagoResponse = await fetch("/.netlify/functions/crearLinkPago", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: raw
+    });
+
+    const pagoResult = await pagoResponse.json();
+
+    if (!pagoResponse.ok || !pagoResult.url || !pagoResult.payment_link) {
+      console.error('No se recibió un enlace de pago válido.', pagoResult);
       ocultarLoader();
+      return;
     }
-  })
-  .catch(error => {
-    console.log('error', error);
+
+    window.location.href = pagoResult.url;
+
+  }catch (error) {
+    alert("Error en la conexión: " + error.message);
     ocultarLoader();
-  });
+
+}
 }
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -581,9 +662,6 @@ function contraerTodosLosSubmenus() {
     submenu.classList.add('oculto');
   });
 }
-
-
-
 
 // Cerrar modal desde el botón ✕
 document.getElementById("cerrar-modal").addEventListener("click", () => {
@@ -700,3 +778,4 @@ window.addEventListener("pageshow", function(event) {
     ocultarLoader();
   }
 });
+

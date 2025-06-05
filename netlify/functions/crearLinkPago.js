@@ -1,11 +1,11 @@
-export async function handler(event, context) {
+export async function handler(event) {
   const body = JSON.parse(event.body || '{}');
 
   const monto = body.monto;
   const descripcion = body.descripcion;
   const tipo = body.tipo || "CLOSE";
-  const image_url = body.image_url; // Nuevo campo
-  const callback_url = body.callback_url; // Nuevo campo
+  const image_url = body.image_url;
+  const callback_url = body.callback_url;
 
   let payload;
 
@@ -25,7 +25,6 @@ export async function handler(event, context) {
     };
   }
 
-  // Añadir campos adicionales si están presentes
   if (image_url) {
     payload.image_url = image_url;
   }
@@ -47,6 +46,9 @@ export async function handler(event, context) {
 
   return {
     statusCode: 200,
-    body: JSON.stringify(data)
+    body: JSON.stringify({
+      url: data.payload.url,
+      payment_link: data.payload.payment_link
+    })
   };
 }

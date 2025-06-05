@@ -823,3 +823,50 @@ body::before {
   cursor: pointer;
   font-size: 1.2rem;
 }
+
+.codigo-telefono {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 1rem;
+}
+
+.codigo-telefono select {
+  font-size: 0.95rem;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  min-width: 115px;
+  background-color: #fff;
+}
+
+.codigo-telefono input {
+  flex: 1;
+}
+
+.producto {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1rem;
+      gap: 1rem;
+    }
+    .producto img {
+      width: 64px;
+      height: 64px;
+      object-fit: cover;
+      border-radius: 0.5rem;
+    }
+    .producto-info {
+      flex: 1;
+    }
+    .btn-volver {
+      display: inline-block;
+      background: #111;
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border-radius: 9999px;
+      text-align: center;
+      transition: background 0.3s ease;
+    }
+    .btn-volver:hover {
+      background: #333;
+    }
