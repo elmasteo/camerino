@@ -764,6 +764,7 @@ setTimeout(() => {
 }, 5000); // fuerza ocultar después de 5 segundos
 
 function mostrarModalFormulario() {
+  if (carrito.length === 0) return alert("Tu carrito está vacío.");
   document.getElementById('modal-formulario').classList.remove('oculto');
 }
 
