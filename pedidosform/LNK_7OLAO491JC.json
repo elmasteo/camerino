@@ -1,0 +1,20 @@
+{
+  "nombre": "Test test",
+  "telefonoCompleto": "573157862008",
+  "direccion": "Test",
+  "ciudad": "Test",
+  "carrito": [
+    {
+      "id": 3,
+      "nombre": "Deadpool - Wolverine",
+      "precio": 260000,
+      "imagen": "./images/deadpool.jpeg",
+      "categoria": "tapetes",
+      "stock": 1,
+      "cantidad": 1
+    }
+  ],
+  "total": 260000,
+  "payment_link": "LNK_7OLAO491JC",
+  "fecha": "2025-06-05T03:19:54.383Z"
+}
