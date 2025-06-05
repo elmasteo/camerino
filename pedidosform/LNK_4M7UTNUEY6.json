@@ -1,0 +1,20 @@
+{
+  "nombre": "Test test test",
+  "telefonoCompleto": "573157862008",
+  "direccion": "Test",
+  "ciudad": "Test",
+  "carrito": [
+    {
+      "id": 1,
+      "nombre": "Kid Boo",
+      "precio": 360000,
+      "imagen": "./images/majinboo.jpeg",
+      "categoria": "tapetes",
+      "stock": 1,
+      "cantidad": 1
+    }
+  ],
+  "total": 360000,
+  "payment_link": "LNK_4M7UTNUEY6",
+  "fecha": "2025-06-05T17:03:25.543Z"
+}
