@@ -1,0 +1,21 @@
+{
+  "nombre": "Santiago gomez caicedo",
+  "telefonoCompleto": "573157862008",
+  "direccion": "cra93A #73A-59 - Apto 402",
+  "ciudad": "Bogotá",
+  "carrito": [
+    {
+      "id": 20,
+      "nombre": "Local - Santa fe",
+      "precio": 70000,
+      "stock": 12,
+      "subcategoria": "Santa fe",
+      "categoria": "indumentaria",
+      "imagen": "/images/img-whatsapp-image-2025-05-22-at-8.13.06-am-2-.jpeg.png",
+      "cantidad": 1
+    }
+  ],
+  "total": 70000,
+  "payment_link": "LNK_6340D6OHFJ",
+  "fecha": "2025-06-05T02:19:56.548Z"
+}
