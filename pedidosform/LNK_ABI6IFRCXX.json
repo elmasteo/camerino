@@ -1,0 +1,20 @@
+{
+  "nombre": "Veronica",
+  "telefonoCompleto": "573226399080",
+  "direccion": "vs",
+  "ciudad": "Bigota",
+  "carrito": [
+    {
+      "id": 1,
+      "nombre": "Kid Boo",
+      "precio": 360000,
+      "imagen": "./images/majinboo.jpeg",
+      "categoria": "tapetes",
+      "stock": 1,
+      "cantidad": 1
+    }
+  ],
+  "total": 360000,
+  "payment_link": "LNK_ABI6IFRCXX",
+  "fecha": "2025-07-10T22:21:51.779Z"
+}
