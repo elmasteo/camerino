@@ -870,3 +870,33 @@ body::before {
     .btn-volver:hover {
       background: #333;
     }
+
+.footer-extra {
+  background: #333;
+  color: #ccc;
+  font-size: 14px;
+  padding: 12px;
+  text-align: center;
+}
+
+.footer-extra .wa-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 6px;
+  vertical-align: middle;
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.footer-extra .wa-link img {
+  width: 20px;
+  height: 20px;
+}
+
+.footer-extra .wa-link:hover {
+  transform: scale(1.2);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
