@@ -1,0 +1,30 @@
+{
+  "nombre": "tes test",
+  "telefonoCompleto": "573157862008",
+  "direccion": "cra falsa 123",
+  "ciudad": "Bogotá",
+  "carrito": [
+    {
+      "id": 1,
+      "nombre": "Kid Boo",
+      "precio": 360000,
+      "imagen": "./images/majinboo.jpeg",
+      "categoria": "tapetes",
+      "stock": 1,
+      "cantidad": 1
+    },
+    {
+      "id": 10,
+      "nombre": "Camiseta Dama - Millonarios",
+      "precio": 70000,
+      "stock": 12,
+      "categoria": "indumentaria",
+      "imagen": "/images/whatsapp-image-2025-05-19-at-11.13.24-am-8-.jpeg",
+      "subcategoria": "Millonarios",
+      "cantidad": 3
+    }
+  ],
+  "total": 570000,
+  "payment_link": "LNK_6CEO4P5TMI",
+  "fecha": "2025-09-03T20:12:49.402Z"
+}
