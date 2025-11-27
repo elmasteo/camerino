@@ -1,0 +1,20 @@
+{
+  "nombre": "maria",
+  "telefonoCompleto": "573165678765",
+  "direccion": "calle 54 67 5",
+  "ciudad": "cali",
+  "carrito": [
+    {
+      "id": 3,
+      "nombre": "Deadpool - Wolverine",
+      "precio": 260000,
+      "imagen": "./images/deadpool.jpeg",
+      "categoria": "tapetes",
+      "stock": 1,
+      "cantidad": 1
+    }
+  ],
+  "total": 260000,
+  "payment_link": "LNK_RDPR4I2DZK",
+  "fecha": "2025-11-27T19:07:18.833Z"
+}
