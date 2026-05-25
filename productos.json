@@ -3,7 +3,7 @@
     {
       "id": 1,
       "nombre": "Kid Boo",
-      "precio": 360000,
+      "precio": 380000,
       "imagen": "./images/majinboo.jpeg",
       "categoria": "tapetes",
       "stock": 1
@@ -11,7 +11,7 @@
     {
       "id": 2,
       "nombre": "Cell",
-      "precio": 360000,
+      "precio": 380000,
       "imagen": "./images/cell.jpeg",
       "categoria": "tapetes",
       "stock": 1
@@ -19,7 +19,7 @@
     {
       "id": 3,
       "nombre": "Deadpool - Wolverine",
-      "precio": 260000,
+      "precio": 180000,
       "imagen": "./images/deadpool.jpeg",
       "categoria": "tapetes",
       "stock": 1
@@ -27,7 +27,7 @@
     {
       "id": 4,
       "nombre": "Mario Tortuga",
-      "precio": 260000,
+      "precio": 180000,
       "imagen": "./images/tortuga.jpeg",
       "categoria": "tapetes",
       "stock": 1
@@ -35,7 +35,7 @@
     {
       "id": 5,
       "nombre": "Pokebola",
-      "precio": 260000,
+      "precio": 180000,
       "imagen": "./images/pokebola.jpeg",
       "categoria": "tapetes",
       "stock": 1
@@ -43,7 +43,7 @@
     {
       "id": 6,
       "nombre": "Sunny - One Piece",
-      "precio": 260000,
+      "precio": 180000,
       "imagen": "./images/sunny.jpeg",
       "categoria": "tapetes",
       "stock": 1
@@ -51,7 +51,7 @@
     {
       "id": 7,
       "nombre": "One Piece",
-      "precio": 260000,
+      "precio": 180000,
       "imagen": "./images/onepiece.jpeg",
       "categoria": "tapetes",
       "stock": 1
@@ -59,7 +59,7 @@
     {
       "id": 8,
       "nombre": "Playstation",
-      "precio": 260000,
+      "precio": 180000,
       "imagen": "./images/play.jpeg",
       "categoria": "tapetes",
       "stock": 1
@@ -643,6 +643,22 @@
       "stock": 1,
       "categoria": "tapetes",
       "imagen": "/images/calavera-abstracto.jpeg"
+    },
+    {
+      "id": 75,
+      "nombre": "Carta Uno",
+      "precio": 220000,
+      "stock": 1,
+      "categoria": "tapetes",
+      "imagen": "/images/carta-uno.jpeg"
+    },
+    {
+      "id": 76,
+      "nombre": "Totoro",
+      "precio": 260000,
+      "stock": 1,
+      "categoria": "tapetes",
+      "imagen": "/images/totoro.jpeg"
     }
   ]
 }
