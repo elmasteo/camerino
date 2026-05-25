@@ -539,6 +539,110 @@
       "subcategoria": "Colombia",
       "categoria": "indumentaria",
       "imagen": "/images/whatsapp-image-2025-05-19-at-11.13.25-am-1-.jpeg"
+    },
+    {
+      "id": 62,
+      "nombre": "Leonardo - Mousepad",
+      "precio": 80000,
+      "stock": 1,
+      "categoria": "tapetes",
+      "imagen": "/images/leonardo.jpeg"
+    },
+    {
+      "id": 63,
+      "nombre": "Rafael - Mousepad",
+      "precio": 80000,
+      "stock": 1,
+      "categoria": "tapetes",
+      "imagen": "/images/rafael.jpeg"
+    },
+    {
+      "id": 64,
+      "nombre": "Miguel Angel - Mousepad",
+      "precio": 80000,
+      "stock": 1,
+      "categoria": "tapetes",
+      "imagen": "/images/miguel-angel-mickey.jpeg"
+    },
+    {
+      "id": 65,
+      "nombre": "Donatello - Mousepad",
+      "precio": 80000,
+      "stock": 1,
+      "categoria": "tapetes",
+      "imagen": "/images/donatello.jpeg"
+    },
+    {
+      "id": 66,
+      "nombre": "Pikachu - Mousepad",
+      "precio": 80000,
+      "stock": 1,
+      "categoria": "tapetes",
+      "imagen": "/images/pikachu.jpeg"
+    },
+    {
+      "id": 67,
+      "nombre": "Ivysaur - Mousepad",
+      "precio": 80000,
+      "stock": 1,
+      "categoria": "tapetes",
+      "imagen": "/images/ivysaur.jpeg"
+    },
+    {
+      "id": 68,
+      "nombre": "Squirtle - Mousepad",
+      "precio": 80000,
+      "stock": 1,
+      "categoria": "tapetes",
+      "imagen": "/images/bulbazur.jpeg"
+    },
+    {
+      "id": 69,
+      "nombre": "Fin Y Jake",
+      "precio": 260000,
+      "stock": 1,
+      "categoria": "tapetes",
+      "imagen": "/images/fin-y-jake.jpeg"
+    },
+    {
+      "id": 70,
+      "nombre": "Gokú",
+      "precio": 650000,
+      "stock": 1,
+      "categoria": "tapetes",
+      "imagen": "/images/goku.jpeg"
+    },
+    {
+      "id": 71,
+      "nombre": "Dragonite",
+      "precio": 420000,
+      "stock": 1,
+      "categoria": "tapetes",
+      "imagen": "/images/dragonite.jpeg"
+    },
+    {
+      "id": 72,
+      "nombre": "Abstracto - Azul - Amarillo",
+      "precio": 260000,
+      "stock": 1,
+      "categoria": "tapetes",
+      "imagen": "/images/abstracto-azul-amarillo.jpeg"
+    },
+    {
+      "id": 73,
+      "nombre": "Abstracto - Azul - Naranja",
+      "precio": 260000,
+      "stock": 1,
+      "categoria": "tapetes",
+      "imagen": "/images/abstracto-azul-naranja.jpeg"
+    },
+    {
+      "id": 74,
+      "nombre": "Calavera ",
+      "precio": 320000,
+      "stock": 1,
+      "categoria": "tapetes",
+      "imagen": "/images/calavera-abstracto.jpeg"
     }
   ]
 }
