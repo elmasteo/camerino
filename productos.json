@@ -1,6 +1,22 @@
 {
   "productos": [
     {
+      "id": 70,
+      "nombre": "Gokú",
+      "precio": 650000,
+      "stock": 1,
+      "categoria": "tapetes",
+      "imagen": "/images/goku.jpeg"
+    },
+    {
+      "id": 71,
+      "nombre": "Dragonite",
+      "precio": 420000,
+      "stock": 1,
+      "categoria": "tapetes",
+      "imagen": "/images/dragonite.jpeg"
+    },
+    {
       "id": 1,
       "nombre": "Kid Boo",
       "precio": 380000,
@@ -31,6 +47,14 @@
       "imagen": "./images/tortuga.jpeg",
       "categoria": "tapetes",
       "stock": 1
+    },
+    {
+      "id": 76,
+      "nombre": "Totoro",
+      "precio": 260000,
+      "stock": 1,
+      "categoria": "tapetes",
+      "imagen": "/images/totoro.jpeg"
     },
     {
       "id": 5,
@@ -605,22 +629,6 @@
       "imagen": "/images/fin-y-jake.jpeg"
     },
     {
-      "id": 70,
-      "nombre": "Gokú",
-      "precio": 650000,
-      "stock": 1,
-      "categoria": "tapetes",
-      "imagen": "/images/goku.jpeg"
-    },
-    {
-      "id": 71,
-      "nombre": "Dragonite",
-      "precio": 420000,
-      "stock": 1,
-      "categoria": "tapetes",
-      "imagen": "/images/dragonite.jpeg"
-    },
-    {
       "id": 72,
       "nombre": "Abstracto - Azul - Amarillo",
       "precio": 260000,
@@ -654,11 +662,19 @@
     },
     {
       "id": 76,
-      "nombre": "Totoro",
-      "precio": 260000,
+      "nombre": "Sharingan",
+      "precio": 180000,
       "stock": 1,
       "categoria": "tapetes",
-      "imagen": "/images/totoro.jpeg"
+      "imagen": "/images/sharingan.jpeg"
+    },
+    {
+      "id": 77,
+      "nombre": "Rinegan",
+      "precio": 180000,
+      "stock": 1,
+      "categoria": "tapetes",
+      "imagen": "/images/rinegan.jpeg"
     }
   ]
 }
