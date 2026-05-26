@@ -57,6 +57,22 @@
       "imagen": "/images/totoro.jpeg"
     },
     {
+      "id": 78,
+      "nombre": "Sharingan",
+      "precio": 180000,
+      "stock": 1,
+      "categoria": "tapetes",
+      "imagen": "/images/sharingan.jpeg"
+    },
+    {
+      "id": 77,
+      "nombre": "Rinegan",
+      "precio": 180000,
+      "stock": 1,
+      "categoria": "tapetes",
+      "imagen": "/images/rinegan.jpeg"
+    },
+    {
       "id": 5,
       "nombre": "Pokebola",
       "precio": 180000,
@@ -659,22 +675,6 @@
       "stock": 1,
       "categoria": "tapetes",
       "imagen": "/images/carta-uno.jpeg"
-    },
-    {
-      "id": 76,
-      "nombre": "Sharingan",
-      "precio": 180000,
-      "stock": 1,
-      "categoria": "tapetes",
-      "imagen": "/images/sharingan.jpeg"
-    },
-    {
-      "id": 77,
-      "nombre": "Rinegan",
-      "precio": 180000,
-      "stock": 1,
-      "categoria": "tapetes",
-      "imagen": "/images/rinegan.jpeg"
     }
   ]
 }
